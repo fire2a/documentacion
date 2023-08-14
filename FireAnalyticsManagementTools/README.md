@@ -1,3 +1,8 @@
+---
+layout: default
+title: Toolbox
+nav_order: 2
+---
      Forest Fires Advanced Analytics & Management Tools
         
            QGIS Processing Plugin Template

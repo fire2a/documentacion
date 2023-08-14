@@ -13,6 +13,9 @@ __Cell2Fire__: Forest fire simulator ([Forked](https://github.com/cell2fire/Cell
 
 __Fire Library__: A python package to common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc...
 
+{: .warning}
+This is a callout
+
 
 This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
