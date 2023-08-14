@@ -3,11 +3,15 @@
 title: Fire2a Documentation
 description: Fire2a research group documentation for published tools
 theme: just-the-docs
+url: "https://fdobad.github.io/docs"
+repository: fdobad/docs
 
-url: https://fdobad.github.io/docs
+color_scheme: nil
 
 aux_links:
   "View on github": https://github.com/fdobad/docs
+
+aux_links_new_tab: true
 
 logo: "/assets/images/f2a-icon.png"
 
@@ -57,3 +61,6 @@ callouts:
     title: Critical
     color: red
     opacity: 0.3
+
+  back_to_top: true
+  back_to_top_text: "Back to top"
