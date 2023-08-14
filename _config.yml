@@ -90,5 +90,5 @@ callouts:
     color: red
     opacity: 0.3
 
-  back_to_top: true
-  back_to_top_text: "Back to top"
+back_to_top: true
+back_to_top_text: "Back to top"
