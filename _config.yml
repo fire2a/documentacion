@@ -6,7 +6,7 @@ theme: just-the-docs
 url: "https://fdobad.github.io/docs"
 repository: fdobad/docs
 
-color_scheme: nil
+# color_scheme: nil
 
 aux_links:
   "View on github": https://github.com/fdobad/docs
@@ -14,6 +14,34 @@ aux_links:
 aux_links_new_tab: true
 
 logo: "/assets/images/f2a-icon.png"
+
+exclude:
+ # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
+   - .sass-cache/
+   - .jekyll-cache/
+   - gemfiles/
+   - Gemfile
+   - Gemfile.lock
+   - node_modules/
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+ # specific to the theme website:
+   - bin/
+   - lib/
+   - "*.gemspec"
+   - "*.gem"
+   - LICENSE.txt
+   - package.json
+   - package-lock.json
+   - Rakefile
+   - README.md
+   - CODE_OF_CONDUCT.md
+   - docker-compose.yml
+   - Dockerfile
+ # theme test code
+   - fixtures/
 
 # Enable or disable the site search
 # Supports true (default) or false
