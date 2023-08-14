@@ -1,3 +1,9 @@
+---
+layout: default
+title: Expert dialog
+nav_order: 3
+---
+
 # Developer guide
 
 ## The developer dialog

@@ -1,3 +1,9 @@
+---
+layout: default
+title: QGIS guide
+nav_order: 4
+---
+
 # QGIS
 
 1. Install Guides

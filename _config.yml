@@ -9,7 +9,7 @@ url: https://fdobad.github.io/docs
 aux_links:
   "View on github": https://github.com/fdobad/docs
 
-logo: "/assets/images/icon.png"
+logo: "/assets/images/f2a-icon.png"
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -40,8 +40,20 @@ search:
   button: false
 
 callouts:
+  # grey-lt, grey-dk, purple, blue, green, yellow, red
+  success:
+    title: Success
+    color: green
+    opacity: 0.3
+  info:
+    title: Information
+    color: blue
+    opacity: 0.3
   warning:
     title: Warning
+    color: yellow
+    opacity: 0.3
+  critical:
+    title: Critical
     color: red
     opacity: 0.3
-    # grey-lt, grey-dk, purple, blue, green, yellow, red

@@ -2,6 +2,7 @@
 layout: default
 title: Installation
 nav_order: 2
+parent: Toolbox
 ---
 # Qgis Plugin Installation
 

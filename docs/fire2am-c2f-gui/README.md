@@ -1,8 +1,11 @@
 ---
 layout: default
-title: Cell2Fire QGIS plugin
+title: Cell2Fire GUI QGIS plugin
 nav_order: 2
+has_children: true
+has_toc: false
 ---
+
 # Cell 2 Fire QGIS plugin
 
 This repo contains a [QGIS](https://qgis.org) [plugin](https://plugins.qgis.org/) for graphically interfacing with Cell2Fire [SB](https://github.com/fire2a/C2FSB) simulator.  

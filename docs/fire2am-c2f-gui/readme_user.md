@@ -1,3 +1,9 @@
+---
+layout: default
+title: Expert dialog
+nav_order: 3
+---
+
         Fire 2 Advanced Analytics & Management Research Center,
 
             Fire Analytics Management
