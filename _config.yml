@@ -42,6 +42,6 @@ search:
 callouts:
   warning:
     title: Warning
-    color: pink
+    color: red
     opacity: 0.3
     # grey-lt, grey-dk, purple, blue, green, yellow, red
