@@ -18,6 +18,9 @@ heading_anchors: true
 logo: "/assets/images/f2a-icon.png"
 favicon_ico: "/assets/images/favicon.ico"
 
+back_to_top: true
+back_to_top_text: "Back to top"
+
 exclude:
  # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
    - .sass-cache/
