@@ -1,7 +1,8 @@
 ---
 layout: default
-title: QGIS guide
+title: QGIS Cookbook
 nav_order: 4
+has_toc: false
 ---
 
 # QGIS

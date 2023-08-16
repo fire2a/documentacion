@@ -13,7 +13,10 @@ aux_links:
 
 aux_links_new_tab: true
 
+heading_anchors: true
+
 logo: "/assets/images/f2a-icon.png"
+favicon_ico: "/assets/images/favicon.ico"
 
 exclude:
  # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
@@ -90,5 +93,5 @@ callouts:
     color: red
     opacity: 0.3
 
-back_to_top: true
-back_to_top_text: "Back to top"
+plugins:
+  - jekyll-avatar

@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Installation
-nav_order: 2
-parent: Toolbox
+nav_order: 1
+parent: Fire2a QGIS-Toolbox
+has_toc: false
 ---
 # Qgis Plugin Installation
 

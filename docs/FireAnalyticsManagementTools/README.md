@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Toolbox
-nav_order: 1
+title: Fire2a QGIS-Toolbox
+nav_order: 3
 has_children: true
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Expert dialog
-nav_order: 3
+title: user manual
+nav_order: 1
+parent: Cell2Fire QGIS-plugin
 ---
 
         Fire 2 Advanced Analytics & Management Research Center,

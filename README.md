@@ -12,4 +12,27 @@ Currently hosted at [ISCI](https://isci.cl) offices.
 
 Contact us at <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
 
-[licence](./LICENCE)
+[content licence](./LICENCE)
+[just-the-docs-licence](./just-the-docs-LICENCE)
+
+## local hosting on debian
+### install
+
+    sudo apt-get install ruby-full ruby-bundler jekyll build-essential
+    cd repo/root/
+    bundle config set --local path 'vendor/bundle'
+    bundle install
+
+### serve
+
+    bundle exec jekyll serve --livereload
+
+    # ctrl+click here to open
+    ...
+    Server address: http://127.0.0.1:4000
+    ...
+
+### references
+https://github.com/just-the-docs/just-the-docs
+https://jekyllrb.com/docs/installation/other-linux/
+

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Expert dialog
-nav_order: 3
+title: expert dialog
+nav_order: 2
+parent: Cell2Fire QGIS-plugin
 ---
 
 # Developer guide

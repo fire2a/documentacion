@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cell2Fire GUI QGIS plugin
+title: Cell2Fire QGIS-plugin
 nav_order: 2
 has_children: true
 has_toc: false
