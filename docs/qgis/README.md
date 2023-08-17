@@ -21,11 +21,55 @@ nav_order: 4
 2. Python scripting
 3. Development guides
 
+# Plugin Management
+## Installation
+Plugins can be installed from QGIS official plugin [portal](https://plugins.qgis.org/), from a [custom repo](#adding-a-custom-plugin-repo) server or by [placing a folder](#placing-a-folder) on the proper place.  
+QGIS does not handle plugin dependencies, so is up to the user to install them, this is covered extensively for python on [windows](#windows-python-environment) or [linux](#linux-python-environment).
+
+### select and install
+1. On QGIS MenuBar: Plugins > Manage and Install Plugins... > All  
+2. Type the plugin name
+3. Click Install  
+An example install is made at the end of [next section](#anchor)
+
+### adding a custom plugin repo
+1. On QGIS MenuBar: Plugins > Manage and Install Plugins... > Settings > Add... (button at the bottom right of Plugin Repositories section)  
+1. 'Repository details' dialog opens, fill form inputs:  
+ Name: any, though "Fire2a" is suggested  
+ URL: https://fdobad.github.io/qgis-processingplugin-template/plugins.xml (will change)
+1. Confirm (Ok button), repos will be reloaded and a success state should be seen from the fire2a repository
+
+<a name="anchor">
+![](./img/install_plugin_server.gif)
+</a>
+
+### placing a folder
+Download & unzip a release from the repo [releases](https://github.com/fdobad/qgis-processingplugin-template/releases) section  
+Example: Unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plugin` must be moved to: 
+```
+# linux (symbolic link it!)
+~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
+# windows
+%APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\example_plugin
+```
+Now [select & install](#select-and-install)
+
+## Update
+If the plugin is installed via a repo server url, updates will be prompted in QGIS's message bar. Else removing and reinstalling is recommended.
+## Remove
+If the plugin is installed via a repo server url, removing is easy as pressing uninstall on the plugin's description page. Else the folder must be manually deleted.
+NOTE: Removing a repo server url does not remove installed plugins.
+
 # Linux 🗽
 ## install
-* On Debian Gnome getting the Long Term Release (LTR) is easy as: `Super (or Meta) Key > type 'QGIS' > Click 'Install' on the Software app dialog`
+* On Debian getting the Long Term Release (LTR) is easy as: 
+    * Gnome: `Super (or Meta) Key > type 'QGIS' > Click 'Install' on the Software app dialog`
+    * Synaptic: search for qgis, click install
+    * Terminal: `sudo apt install qgis qgis-plugin-grass`
+    * _Check the following link if you want the latest release instead of stable LTR_
 * [Other distributions](https://qgis.org/en/site/forusers/alldownloads.html#linux)
 
+<a id="linux-python-environment"></a>
 ## python environment
 
 {: .critical}
@@ -113,7 +157,9 @@ On your keyboard press the 'Win' button > type 'cmd' > 2dary click on the app > 
 The `--scope machine` option is recommended to making launcher icons for all users
 3. Follow on screen instructions (all defaults are ok)
 
+<a id="windows-python-environment"></a>
 ## python environment
+
 QGIS comes bundled with its own python that's set up in a special way to integrate with all QGIS components such as PyQt, GDAL, GRASS, etc. So activating it is not as simple as running `Scripts/activate.bat`.
 
 ### installing requirements

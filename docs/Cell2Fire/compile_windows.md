@@ -1,7 +1,8 @@
 ---
 layout: default
-title: compile using Visual Studio
-nav_order: 99
+title: compiling with Visual Studio
+nav_order: 2
+parent: Cell2Fire++
 has_children: false
 has_toc: false
 ---

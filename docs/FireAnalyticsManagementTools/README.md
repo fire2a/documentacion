@@ -3,44 +3,64 @@ layout: default
 title: Fire2a QGIS-Toolbox
 nav_order: 3
 has_children: true
+has_toc : false
 ---
+# Fire2a QGIS-Toolbox
 
-     Forest Fires Advanced Analytics & Management Tools
-        
-           QGIS Processing Plugin Template
-                
-            by fire2a.com research centre
+This type of plugins are designed following a data pipeline architecture principle. 
+With clearly delimited components: input, output, algorithm and context; it achieves a better integration with QGIS APIs, providing 3 different interfaces:
+1. A window dialog on the [processing toolbox](https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html) interface
+2. A [command line interface](https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone) using `$ qgis_process`
+3. A python interface that can be used either 
+    on the [QGIS console](#script-in-qgis-console)
+    or as a [standalone](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/standalone.py) script.
+4. Modeler interface component? (not sure about this one)
 
-                     version=
+The idea behind this architecture is that the user composes its own pipeline, combining different algorithms to achieve their goal. This is a more flexible, reusable, scalable and easier to mantain approach than independent QGIS plugins, where each one is designed to a specific need with custom inputs, outputs and behavior. Making it nearly impossible to use them outside the window dialog mode less combining them.
 
+Currently 
 [This repo](https://github.com/fdobad/qgis-processingplugin-template) is a template for QGIS processing toolbox [plugins](https://plugins.qgis.org).
-
-Its main content is a proof-of-concept integration between QGIS rasters and a knapsack optimization MIP model.
+# Algorithms
+## Raster knapsack optimization
+### Intro
+_A proof-of-concept integration of mathematical programming solvers to model and solve optimization problems with GIS entities._
 
 Users can create a new raster layer that selects the most valuable pixels in a raster, according to a capacity constraint defined by another -optional- raster and a fractional ratio.
 
-This can be achieved in four ways:
-- Graphically on the [processing toolbox](https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html) interface, 
-- On the [command line](https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone) using `$ qgis_process`
-- Or in python scripts [qgis console](#script-in-qgis-console) or [standalone](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/standalone.py).
-
-Finally several solvers can be used (cbc, glpk, cplex_direct, ipopt, TODO gurobi, scipy), thanks to the MIP being modeled and solved through [pyomo](http://www.pyomo.org). Though is up to the user to install each solver, the plugin checks for availability before displaying them in the solver chooser comboBox. Also a solver options string is optionally configurable (i.e., set precision and time limits)
-
-__Installation instructions [here](./plugin_installation.md)__  
-__QGIS-plugin-repo [link](./plugins.xml)__  
+Several solvers can be used (cbc, glpk, cplex_direct, gurobi, ipopt, NEOS, etc.), thanks to the MIP being modeled and solved through [pyomo](http://www.pyomo.org).
 
 | screenshot |
 | --- |
 |<img src="img/screenshot.png"  alt='cannot load image' height=400px >|
 
+### Detailed description
+By selecting a Values layer and/or a Weights layer, and setting the bound on the total capacity, a layer that maximizes the sum of the values of the selected pixels is created.
+
+The capacity constraint is set up by choosing a ratio (between 0 and 1), that multiplies the sum of all weights (except no-data). Hence 1 selects all pixels that aren't no-data in both layers.
+
+This raster knapsack problem is NP-hard, so a MIP solver engine is used to find "nearly" the optimal solution, because -often- is asymptotically hard to prove the optimal value. So a default gap of 0.5% and a timelimit of 5 minutes cuts off the solver run. The user can experiment with these parameters to trade-off between accuracy, speed and instance size(*). On Windows closing the blank terminal window will abort the run!
+
+By using Pyomo, several MIP solvers can be used: CBC, GLPK, Gurobi, CPLEX or Ipopt; If they're accessible through the system PATH, else the executable file can be selected by the user.
+
+Installation of solvers is up to the user, although the windows version is bundled with CBC unsigned binaries, so their users will face a "Windows protected your PC" warning, please avoid pressing the "Don't run" button, follow the "More info" link, scroll then press "Run anyway".
+
+(*): Complexity can be reduced greatly by rescaling and/or rounding values into integers, or even better coarsing the raster resolution (see gdal translate resolution).
+
+__Installation instructions [here](./plugin_installation.md)__  
+__QGIS-plugin-repo [link](./plugins.xml)__  
+
 # Usage
-## Graphical
+## window dialog
 1. Open QGIS Processing Toolbox (the cog icon)
 2. Type or navigate to: Fire2a > Raster Knapsack Optimization
 3. Select one or two layers, input the capacity ratio
 4. Click Run
 
-## Script in QGIS Console
+## command line
+
+## standalone script
+
+## script in QGIS Console
 ```
 from qgis import processing
 result = processing.run(

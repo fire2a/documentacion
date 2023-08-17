@@ -2,10 +2,19 @@
 layout: default
 title: Cell2Fire++
 nav_order: 1
-has_children: false
+has_children: true
 has_toc: false
 ---
 # Cell2Fire++
+{: .no_toc}
+<details closed markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 Coming soon: We are working towards unifying the c++ backend.
 
@@ -31,25 +40,12 @@ And the [OG](https://github.com/cell2fire/Cell2Fire/)
 ## Canadian Forest Fire Behavior Prediction System
 
 |:-------------|:------------------|
-| Dogrib forest Canada ![](./img/c2fFBP-Example4.png) | shortest paths propagation ![](./img/c2fFBP-Example1.png) |
-| Shortest paths propagation and ROS intensity ![](./img/c2fFBP-Example2.png) | Burn-Probability ![](./img/c2fFBP-Example3.png) |
+| Dogrib forest, Canada ![](./img/c2fFBP-Example4.png){: width="100%" } | shortest paths propagation ![](./img/c2fFBP-Example1.png){: width="80%" } |
+| Shortest paths propagation and ROS intensity ![](./img/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](./img/c2fFBP-Example3.png){: width="80%" } |
 
 # Compiling
 ## Linux
-A Cell2Fire++ binary is provided with the release; anyway to compile it:
-```bash
-sudo apt install g++ libboost-all-dev libeigen3-dev
-cd C2FSB/Cell2FireC
-make clean
-make 
-```  
-If it fails, is probably the `makefile` assuming `EIGENDIR = /usr/include/eigen3/`  
-Locate where your distribution installs `eigen`, either using the command `nice find / -readable -type d -name eigen3 2>/dev/null` or check your distribution's documentation for `libeigen3-dev` package [^1] [^2]. Edit `makefile` accordingly, then try making again. 
+[Make](compile_linux.html)
 
 ## Windows
-[Using Visual Studio](README_VisualStudio.html)
-
-----
-
-[^1]: https://packages.debian.org/bookworm/all/libeigen3-dev/filelist
-[^2]: https://packages.ubuntu.com/search?keywords=libeigen3-dev
+[Using Visual Studio](compile_windows.html)
