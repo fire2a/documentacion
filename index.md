@@ -24,16 +24,17 @@ Contact us at <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
 
 [{% avatar fire2a %}](https://github.com/fire2a/)
 [{% avatar jaimecarrasco %}](https://github.com/jaimecarrasco/)
-[{% avatar RodrigoMahalufRecasens %}](https://github.com/RodrigoMahalufRecasens/)
+[{% avatar RodrigoMahalufRecasens size=30 %}](https://github.com/RodrigoMahalufRecasens/)
 [{% avatar davidpalaciosm %}](https://github.com/davidpalaciosm/)
 [{% avatar fulloaf %}](https://github.com/fulloaf/)
-[{% avatar fdobad size=41 %}](https://github.com/fdobad/)
+[{% avatar fdobad size=40 %}](https://github.com/fdobad/)
+[![](assets/images/aw.png){: width="40" }](https://www.dii.uchile.cl/~aweintra/)
 
 ![ci](https://github.com/fdobad/docs/actions/workflows/ci.yml/badge.svg)
 ![pages](https://github.com/fdobad/docs/actions/workflows/pages.yml/badge.svg)
 
 [content licence](https://raw.githubusercontent.com/fdobad/docs/main/LICENSE)  
-[just-the-docs-licence](https://raw.githubusercontent.com/fdobad/docs/main/just-the-docs-LICENCE)  
+[just-the-docs-licence](https://raw.githubusercontent.com/fdobad/docs/main/just-the-docs-LICENSE)
 
 ---
 [QGIS]: https://qgis.org
