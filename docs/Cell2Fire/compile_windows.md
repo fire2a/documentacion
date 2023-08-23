@@ -23,13 +23,15 @@ Tested on Microsoft Visual Studio Community 2022 (64-bit) - Version 17.6.5
 
 Get Visual Studio (Community), install Visual C++ Workflow  
 
-Get these libraries (download & un7zip them):  
+Get these libraries (download & un7zip them into any desired location like `c:\dev`):  
 
 - dirent-1.23.2 : https://github.com/tronkko/dirent/releases  
 - boost 1.81.0 : https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/  
 - eigen 3.4.0 : https://gitlab.com/libeigen/eigen/-/releases  
 
 ## Setup the solution project  
+
+1. Open Visual Studio
 
 1. If not found `repo/Cell2FireC/Cell2fire.sln`:  
 
@@ -51,10 +53,11 @@ Open `Cell2Fire.sln` that should placed be next to `.h` and `.cpp` files
 	- Debugging > Command Arguments : `--input-instance-folder C:/...repos/C2FSB/data/Hom_Fuel_101_40x40/ --output-folder C:/.../results/`  
     - Linker > System > Subsystem : `Console (/SUBSYSTEM:CONSOLE)`
 
-Are they really located at `C:\dev`?
+Adjust if they are not located at `C:\dev`?
 
 ## Compile  
 ### Debug phase
+You can skip debug and go right to release if you haven't made any changes.  
 Press play on `Local Windows Debugger`, if any correct mistakes until you see a command window with:  
 
 ```batch
