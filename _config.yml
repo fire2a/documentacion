@@ -3,13 +3,13 @@
 title: Fire2a Documentation
 description: Fire2a research group documentation for published tools
 theme: just-the-docs
-url: "https://fdobad.github.io/docs"
-repository: fdobad/docs
+url: "https://fire2a.github.io/docs"
+repository: fire2a/docs
 
 # color_scheme: nil
 
 aux_links:
-  "View on github": https://github.com/fdobad/docs
+  "View on github": https://github.com/fire2a/docs
 
 aux_links_new_tab: true
 

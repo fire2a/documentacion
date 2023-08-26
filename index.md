@@ -33,13 +33,13 @@ Contact us at <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
 [{% avatar fdobad size=40 %}](https://github.com/fdobad/)
 [![](assets/images/aw.png){: width="40" }](https://www.dii.uchile.cl/~aweintra/)
 
-![ci](https://github.com/fdobad/docs/actions/workflows/ci.yml/badge.svg)
-![pages](https://github.com/fdobad/docs/actions/workflows/pages.yml/badge.svg)
+![ci](https://github.com/fire2a/docs/actions/workflows/ci.yml/badge.svg)
+![pages](https://github.com/fire2a/docs/actions/workflows/pages.yml/badge.svg)
 
 ### _About this page_  
 It's all [markdown!](docs/markdown_kitchen_sink.html)  
-[content licence](https://raw.githubusercontent.com/fdobad/docs/main/LICENSE)  
-[just-the-docs-licence](https://raw.githubusercontent.com/fdobad/docs/main/just-the-docs-LICENSE)
+[content licence](https://raw.githubusercontent.com/fire2a/docs/main/LICENSE)  
+[just-the-docs-licence](https://raw.githubusercontent.com/fire2a/docs/main/just-the-docs-LICENSE)
 
 ---
 [QGIS]: https://qgis.org
