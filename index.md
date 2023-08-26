@@ -19,7 +19,7 @@ Welcome to the Fire2a research group documentation, choose your component:
 
 # About us
 
-We are a research group that seeks solutions to complex problems arising from the terrestrial ecosystem and its natural and anthropogenic disturbances,such as wildfires.
+We are a research group that seeks solutions to complex problems arising from the terrestrial ecosystem and its natural and anthropogenic disturbances, such as wildfires.
 
 Currently hosted at [ISCI](https://isci.cl) offices.
 
