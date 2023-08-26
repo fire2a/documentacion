@@ -1,18 +1,21 @@
 ---
 title: Home
 layout: home
+nav_order: 99
+has_children: false
 ---
 Welcome to the Fire2a research group documentation, choose your component:
 
 [__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked](https://github.com/cell2fire/Cell2Fire/) and improved: supports different fuel models, calculates a variety novel of metrics, deals with surface and vegetation moisture content; also enhancements in memory management, platform support, etc...)
 
-[__Fire2am: Cell2Fire QGIS-plugin__](docs/fire2am-c2f-gui/README.html): Simulate forest fires, get valuable metrics, in a user friendly graphical interface through [QGIS].
+[__QGIS Dialog-plugin__](docs/fire2am-c2f-gui/README.html): Simulate forest fires, get valuable metrics, in a user friendly graphical interface through [QGIS].
 
-[__Fire2a QGIS-Toolbox__](docs/FireAnalyticsManagementTools/README.html): Next step: Clusterize your results, get firebreak placement recomendations, and more. A [QGIS] processing plugin to socialize our research.
+[__QGIS Processing-Toolbox-plugin__](docs/FireAnalyticsManagementTools/README.html): Next step: Clusterize your results, get firebreak placement recomendations, and more. A [QGIS] processing plugin to socialize our research.
+
+[__Algorithms Library__](docs/fire2a-lib.html): A python package to common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc...
 
 [__QGIS Cookbook__](docs/qgis/README.html): Install & Setup python environments, plugins and workflows...
 
-__Fire Library__: (Coming soon) A python package to common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc...
 
 # About us
 
@@ -33,6 +36,8 @@ Contact us at <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
 ![ci](https://github.com/fdobad/docs/actions/workflows/ci.yml/badge.svg)
 ![pages](https://github.com/fdobad/docs/actions/workflows/pages.yml/badge.svg)
 
+### _About this page_  
+It's all [markdown!](docs/markdown_kitchen_sink.html)  
 [content licence](https://raw.githubusercontent.com/fdobad/docs/main/LICENSE)  
 [just-the-docs-licence](https://raw.githubusercontent.com/fdobad/docs/main/just-the-docs-LICENSE)
 

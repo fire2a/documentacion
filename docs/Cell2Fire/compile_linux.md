@@ -15,7 +15,7 @@ make clean
 make 
 ```  
 If it fails, is probably the `makefile` assuming `EIGENDIR = /usr/include/eigen3/`  
-Locate where your distribution installs `eigen`, either using the command `nice find / -readable -type d -name eigen3 2>/dev/null` or check your distribution's documentation for `libeigen3-dev` package [^1] [^2]. Edit `makefile` accordingly, then try making again. 
+Locate where your distribution installs `eigen`, either using the command `nice find / -readable -type d -name eigen3 2>/dev/null` or check your distribution's documentation for `libeigen3-dev` package [^1] [^2]. Edit `makefile` accordingly, then try building again. 
 
 ----
 

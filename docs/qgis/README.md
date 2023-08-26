@@ -1,7 +1,7 @@
 ---
 layout: default
-title: QGIS Cookbook
-nav_order: 4
+title: QGIS cookbook
+nav_order: 98
 ---
 
 # QGIS Cookbook

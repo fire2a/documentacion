@@ -16,14 +16,17 @@ has_toc: false
 {:toc}
 </details>
 
-Coming soon: We are working towards unifying the c++ backend.
+__Currently an effort to unify and gather improvements of the three different versions is being done [HERE](https://github.com/fire2a/c2f-w)__
 
-Meanwhile, current flavors:
+Cell2Fire is a 2D-grid-based forest and wildland landscape fire simulator, focused on large scale areas and fast simulations to provide robust risk spatial analyitics, harnessing c++ parallel computation methods.
+
+Released flavors:
 - [Scott & Burgan](https://github.com/fire2a/C2FSB)  
 - [Kitral](https://github.com/fire2a/C2FK)  
 - [FBP](https://github.com/fire2a/C2FFBP)
 
-And the [OG](https://github.com/cell2fire/Cell2Fire/)
+The [OG](https://github.com/cell2fire/Cell2Fire/)
+
 
 # Output examples
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cell2Fire QGIS-plugin
+title: QGIS dialog-plugin
 nav_order: 2
 has_children: true
 has_toc: false
