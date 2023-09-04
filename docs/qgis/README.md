@@ -49,6 +49,8 @@ Example: Unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plug
 ```
 # linux (symbolic link it!)
 ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
+# macos
+~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
 # windows
 %APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\example_plugin
 ```
@@ -140,6 +142,23 @@ Save link as:
 
 [further reading](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)  
 <a href="#top">back to top</a>
+
+# MacOS 💰
+```zsh
+# user plugin folder
+~/Library/Application\ Support/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
+
+# QGIS python location
+% cd /Applications/QGIS.app/Contents/MacOS/bin
+
+# install into qgis python environment
+% ./python3 -m pip install -r ~/Downloads/requirements.txt #  adjust this path
+# matplotlib bug: can't find qt_backend
+% ./python3 -m pip install --upgrade matplotlib
+
+# make a separate qgis dev environment
+% ./python3 -m venv --system-site-packages ~/pyvenv/qgis
+```
 
 # Windows 💩™
 
