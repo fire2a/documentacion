@@ -214,9 +214,10 @@ A practical solution seems to copy and modify a `python-qgis.bat` that comes in 
 Recommended for machines with a single user, or to share modifications to the environment to all users.
 
 1. Open `C:\Program Files\QGIS 3.33.3\apps` (check version number)
-2. Select `Python39` (check version), properties, sharing... full control for user.
+2. Select `Python39` (check version), properties, security, ... full control for user.
 
-After showing these two steps, see qtconsole's required distributions being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path
+_After showing these two steps, you're done!_  
+On the gif you can see an example of qtconsole's required distributions being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path.
 
 ![](./img/qgis_windows_single_user.gif){: width="75%" }
 
