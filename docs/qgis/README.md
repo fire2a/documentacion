@@ -216,8 +216,8 @@ Recommended for machines with a single user, or to share modifications to the en
 1. Open `C:\Program Files\QGIS 3.33.3\apps` (check version number)
 2. Select `Python39` (check version), properties, security, ... full control for user.
 
-_After showing these two steps, you're done!_  
-On the gif you can see an example of qtconsole's required distributions being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path.
+_After these two steps, you're done!_  
+Showing on the gif: After doing step 1 and 2, a success install of qtconsole being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path.
 
 ![](./img/qgis_windows_single_user.gif){: width="75%" }
 
