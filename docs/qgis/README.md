@@ -115,12 +115,15 @@ $ pyqgis
 Although this section is optional, `ModuleNotFoundError`s will rise when starting QGIS from the default launchers, if a plugin with modules not in the systems's python (but on the venv) is active _i.e., ours_
 
 Edit the QGIS ~~icon~~ launcher to activate your venv _(when clicking the icon or using `Open with` over a raster, shp, etc. file)_  
-Some DE (xfce, gnome?) allow editing the launcher by 2ndary click on the QGIS icon, then edit; else edit this file `~/.local/share/applications/org.qgis.qgis.desktop`
+Some DE (xfce, gnome?) allow editing the launcher by 2ndary click on the QGIS icon (then edit on the displayed menu); else edit this file `~/.local/share/applications/org.qgis.qgis.desktop`
 ```
 # from
 Exec=qgis %F
 # to
 Exec=bash -c 'source ~/pyenv/qgis/bin/activate && qgis %F'
+
+# if not found on your user it's on system launchers
+cp /usr/share/applications/org.qgis.qgis.desktop ~/.local/share/applications/.
 ```
 
 ### modify
