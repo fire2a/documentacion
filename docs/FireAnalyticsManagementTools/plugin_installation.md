@@ -49,8 +49,11 @@ echo 'alias qgis="source ~/<your_qgis_env_path>/bin/activate && qgis"'>>~/.bashr
 
 ### MIP solvers
 ```
-# debian packages 3 solvers
-sudo apt install coinor-cbc glpk scipy
+# debian packages 2 solvers
+## cbc
+sudo apt install coinor-cbc
+## glpk
+sudo apt install glpk-utils 
 
 TODO
 # windows

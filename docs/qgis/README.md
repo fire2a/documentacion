@@ -49,6 +49,8 @@ Example: Unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plug
 ```
 # linux (symbolic link it!)
 ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
+# macos
+~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
 # windows
 %APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\example_plugin
 ```
@@ -113,12 +115,15 @@ $ pyqgis
 Although this section is optional, `ModuleNotFoundError`s will rise when starting QGIS from the default launchers, if a plugin with modules not in the systems's python (but on the venv) is active _i.e., ours_
 
 Edit the QGIS ~~icon~~ launcher to activate your venv _(when clicking the icon or using `Open with` over a raster, shp, etc. file)_  
-Some DE (xfce, gnome?) allow editing the launcher by 2ndary click on the QGIS icon, then edit; else edit this file `~/.local/share/applications/org.qgis.qgis.desktop`
+Some DE (xfce, gnome?) allow editing the launcher by 2ndary click on the QGIS icon (then edit on the displayed menu); else edit this file `~/.local/share/applications/org.qgis.qgis.desktop`
 ```
 # from
 Exec=qgis %F
 # to
 Exec=bash -c 'source ~/pyenv/qgis/bin/activate && qgis %F'
+
+# if not found on your user it's on system launchers
+cp /usr/share/applications/org.qgis.qgis.desktop ~/.local/share/applications/.
 ```
 
 ### modify
@@ -140,6 +145,23 @@ Save link as:
 
 [further reading](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)  
 <a href="#top">back to top</a>
+
+# MacOS 💰
+```zsh
+# user plugin folder
+~/Library/Application\ Support/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
+
+# QGIS python location
+% cd /Applications/QGIS.app/Contents/MacOS/bin
+
+# install into qgis python environment
+% ./python3 -m pip install -r ~/Downloads/requirements.txt #  adjust this path
+# matplotlib bug: can't find qt_backend
+% ./python3 -m pip install --upgrade matplotlib
+
+# make a separate qgis dev environment
+% ./python3 -m venv --system-site-packages ~/pyvenv/qgis
+```
 
 # Windows 💩™
 
@@ -195,9 +217,10 @@ A practical solution seems to copy and modify a `python-qgis.bat` that comes in 
 Recommended for machines with a single user, or to share modifications to the environment to all users.
 
 1. Open `C:\Program Files\QGIS 3.33.3\apps` (check version number)
-2. Select `Python39` (check version), properties, sharing... full control for user.
+2. Select `Python39` (check version), properties, security, ... full control for user.
 
-After showing these two steps, see qtconsole's required distributions being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path
+_After these two steps, you're done!_  
+Showing on the gif: After doing step 1 and 2, a success install of qtconsole being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path.
 
 ![](./img/qgis_windows_single_user.gif){: width="75%" }
 

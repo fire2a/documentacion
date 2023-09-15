@@ -2,7 +2,7 @@
 
 This repo uses the [just-the-docs-template](https://github.com/just-the-docs/just-the-docs-template) Jekyl Pages action.  
 The source for its content is in the docs directory.  
-Check the live [page](https://fdobad.github.io/docs/).  
+Check the live [page](https://fire2a.github.io/docs/).  
 
 ## About Us
 
