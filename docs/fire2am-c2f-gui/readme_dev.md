@@ -106,6 +106,7 @@ Mostly when adding components in QtDesigner their object name is assigned `class
 ## 2. adding new resources
 ### compile resources if new icons added
 ```
+sudo apt install pyqt5-dev-tools
 cd img
 pyrcc5 -o resources.py resources.qrc
 ```
