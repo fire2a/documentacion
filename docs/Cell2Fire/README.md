@@ -47,8 +47,21 @@ The [OG](https://github.com/cell2fire/Cell2Fire/)
 | Shortest paths propagation and ROS intensity ![](./img/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](./img/c2fFBP-Example3.png){: width="80%" } |
 
 # Compiling
+Releases are bundled with pre-compiled binaries, normal users probably don't need this guide.
+
+## Overview
+```bash
+# install build-essentials, gcc-12, boost, eigen3 & openmp
+cd Cell2FireC
+make clean
+# sample makefiles for linux & macos provided
+make [-f custom_makefile]
+```
 ## Linux
 [Make](compile_linux.html)
+
+## Macos
+[Make](copmpile_macos.html)
 
 ## Windows
 [Using Visual Studio](compile_windows.html)
