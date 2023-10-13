@@ -35,6 +35,8 @@ The plugin and the simulator are developed in different repos so cloning both re
 
     # 2. 
     git clone git@github.com:fdobad/fire2am-qgis-plugin.git fire2am
+    or 
+    git clone git@github.com:fdobad/fire2am-kitral.git fire2am
 
     # 3. (optional) submodule
     cd fire2am

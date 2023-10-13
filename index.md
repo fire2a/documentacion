@@ -6,16 +6,15 @@ has_children: false
 ---
 Welcome to the Fire2a research group documentation, choose your component:
 
-[__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked](https://github.com/cell2fire/Cell2Fire/) and improved: supports different fuel models, calculates a variety novel of metrics, deals with surface and vegetation moisture content; also enhancements in memory management, platform support, etc...)
+[__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked]) and improved ([NowHere]): supports different fuel models, calculates a variety novel of metrics, deals with surface and vegetation moisture content; also enhancements in memory management, platform support, etc...)
 
-[__QGIS Dialog-plugin__](docs/fire2am-c2f-gui/README.html): Simulate forest fires, get valuable metrics, in a user friendly graphical interface through [QGIS].
-
-[__QGIS Processing-Toolbox-plugin__](docs/FireAnalyticsManagementTools/README.html): Next step: Clusterize your results, get firebreak placement recomendations, and more. A [QGIS] processing plugin to socialize our research.
+[__QGIS Processing-Toolbox-plugin__](docs/qgis-toolbox/README.html): Next step: Clusterize your results, get firebreak placement recomendations, and more. A [QGIS] processing plugin to socialize our research.
 
 [__Algorithms Library__](docs/fire2a-lib.html): A python package to common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc...
 
-[__QGIS Cookbook__](docs/qgis/README.html): Install & Setup python environments, plugins and workflows...
+[__QGIS Cookbook__](docs/qgis-cookbook/README.html): Install & Setup python environments, plugins and workflows...
 
+[__QGIS Dialog-plugin__](docs/qgis-dialog/README.html): Simulate forest fires, get valuable metrics, in a user friendly graphical interface through [QGIS]. __Not maintained__, _graphical users should use the Processing-Toolbox._
 
 # About us
 
@@ -43,3 +42,5 @@ It's all [markdown!](docs/markdown_kitchen_sink.html)
 
 ---
 [QGIS]: https://qgis.org
+[Forked]: https://github.com/cell2fire/Cell2Fire/
+[NowHere]: https://github.com/fire2a/C2F-W/

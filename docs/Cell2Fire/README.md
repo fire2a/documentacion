@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cell2Fire++
-nav_order: 1
+nav_order: 2
 has_children: true
 has_toc: false
 ---
@@ -49,6 +49,8 @@ The [OG](https://github.com/cell2fire/Cell2Fire/)
 # Compiling
 Releases are bundled with pre-compiled binaries, normal users probably don't need this guide.
 
+Check the [repo's action artifacts](https://github.com/fire2a/C2F-W/actions) for the latest info on automated builds
+
 ## Overview
 ```bash
 # install build-essentials, gcc-12, boost, eigen3 & openmp
@@ -56,12 +58,16 @@ cd Cell2FireC
 make clean
 # sample makefiles for linux & macos provided
 make [-f custom_makefile]
+
+# integrate with qgis-toolbox:
+ext=`python3 -c "import platform;print(f'.{platform.system()}.{platform.machine()}')"`
+mv Cell2Fire Cell2Fire$ext
 ```
 ## Linux
 [Make](compile_linux.html)
 
 ## Macos
-[Make](copmpile_macos.html)
+[Make](compile_macos.html)
 
 ## Windows
 [Using Visual Studio](compile_windows.html)

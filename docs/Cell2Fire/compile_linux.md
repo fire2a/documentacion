@@ -6,6 +6,13 @@ parent: Cell2Fire++
 has_children: false
 has_toc: false
 ---
+{: .info}
+Integrate the binary to the [toolbox-plugin], by renaming it as:
+```
+ext=`python3 -c "import platform;print(f'.{platform.system()}.{platform.machine()}')"`
+mv Cell2Fire Cell2Fire$ext
+```
+
 # Compile on Linux
 ## debian based
 A Cell2Fire++ binary is provided with the release; though to compile it:
@@ -43,3 +50,6 @@ CFLAGS = -std=c++11 -O3 -I$(EIGENDIR) -fopenmp
 
 [^1]: https://packages.debian.org/bookworm/all/libeigen3-dev/filelist
 [^2]: https://packages.ubuntu.com/search?keywords=libeigen3-dev
+
+----
+[toolbox-plugin]: ../../docs/qgis-toolbox/README.html

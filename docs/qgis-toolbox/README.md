@@ -13,7 +13,7 @@ With clearly delimited components: input, output, algorithm and context; it achi
 2. A [command line interface](https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone) using `$ qgis_process`
 3. A python interface that can be used either 
     on the [QGIS console](#script-in-qgis-console)
-    or as a [standalone](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/standalone.py) script.
+    or as a [standalone](https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/script_samples/standalone.py) script.
 4. Modeler interface component? (not sure about this one)
 
 The idea behind this architecture is that the user composes its own pipeline, combining different algorithms to achieve their goal. This is a more flexible, reusable, scalable and easier to mantain approach than independent QGIS plugins, where each one is designed to a specific need with custom inputs, outputs and behavior. Making it nearly impossible to use them outside the window dialog mode less combining them.
@@ -78,3 +78,12 @@ result = processing.run(
 QgsProject.instance().addMapLayer(result['OUTPUT_layer'])
 ```
 
+---
+[QGIS]: https://qgis.org
+[requirements.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/requirements.txt 
+[requirements.dev.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/requirements.dev.txt
+[Scott&Burgan-dialog-server]: https://fdobad.github.io/qgis-processingplugin-template/plugins.xml
+[Kitral simulator dialog-server]: https://fdobad.github.io/fire2am-kitral/plugins.xml 
+[Processing-Toolbox-server]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml
+[toolbox-releases]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/releases
+[toolbox-repo]: https://www.github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin

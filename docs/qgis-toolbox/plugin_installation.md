@@ -10,14 +10,14 @@ has_toc: false
 ## Overview
 Go to [windows detailed instructions](#windows)
 
-1. [Install/update QGIS](https://qgis.org)  
+1. Install/update [QGIS]  
 2. Install the plugin dependencies
-3. Add fire2a [QGIS-plugin-repository](https://fdobad.github.io/qgis-processingplugin-template/plugins.xml) into QGIS plugins manager interface
+3. Add fire2a [Processing-Toolbox-server] into QGIS plugins manager interface
 4. Install the plugin
 
 ## Step 3 alternatives
-3.B. Download & unzip a release from the repo [releases](https://github.com/fdobad/qgis-processingplugin-template/releases) section  
-3.C. Fork or clone the [repo](https://github.com/fdobad/qgis-processingplugin-template) and contribute!
+3.B. Download & unzip a release from the repo [toolbox-releases] section  
+3.C. Fork or clone the [toolbox-repo] and contribute!
 Both options must end up with this folder:
 ```
 # linux (symbolic link it!)
@@ -30,7 +30,7 @@ Both options must end up with this folder:
 ## Step 2 Installing dependencies
 Two parts: pip install python requirements and MIP solvers  
 ### python
-Save link as: [requirements.txt](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/requirements.txt) (for developers [requirements.dev.txt](https://github.com/fdobad/qgis-processingplugin-template/blob/main/requirements.dev.txt))
+Save link as: [requirements.txt], developer consider [requirements.dev.txt]
 ```
 $ mkdir ~/<your_qgis_env_path>
 $ python3 -m venv --system-site-packages ~/<your_qgis_env_path>  
@@ -68,7 +68,7 @@ TODO
 
 2. Install the plugin requirements (on qgis's python). If this fails there's a last resort [here](<#forcing python requirements in QGIS console>)
 
-    2.1 Download [requirements.txt](https://github.com/fdobad/qgis-processingplugin-template/blob/main/requirements.txt)  
+    2.1 Download [requirements.txt]  
     2.2 Run "OsGeo4WShell" from the start menu  (Start > type 'osgeo' Enter)  
     2.3 Enter `pip install -r "%USERPROFILE%\Downloads\requirements.txt"` (Modify the path to requirements file if needed; tip: 2dary click to paste in terminal)  
    
@@ -78,7 +78,9 @@ TODO
     3.2 Menu Bar: Plugins > Manage and Install Plugins... > Settings > Add... (button at the bottom right of Plugin Repositories section)  
     3.2 "Repository details" dialog opens. Fill inputs:  
         "Name": any, though "Fire2a" is suggested  
-        "URL" input with "https://fdobad.github.io/qgis-processingplugin-template/plugins.xml"  
+        "URL" input with "https://fdobad.github.io/qgis-processingplugin-template/plugins.xml"  (rick roll & Scott&Burgan simulator dialog)
+        "URL": "https://fdobad.github.io/fire2am-kitral/plugins.xml" (Kitral simulator dialog)
+        "URL": "https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml" (Recommended!)
    Confirm (Ok button), repos will be reloaded and a success state should be seen from the fire2a repository
 
 4. Install the plugin
@@ -103,9 +105,18 @@ The last resort but very discouraged method to installing packages for the QGIS 
 import pip
 pip.main(['install', 'my-package-name'])
 ```
-Replace 'my-package-name' and repeat this line with each package from the [requirements.txt](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/requirements.txt) file, ignore the warnings and restart QGIS.  
+Replace 'my-package-name' and repeat this line with each package from the [requirements.txt] file, ignore the warnings and restart QGIS.  
 
 | force pip on python console |
 | --- |
 |<img src="img/not_recommended_install.gif"  alt='cannot load not_recommended_install' height=400px >|
 
+---
+[QGIS]: https://qgis.org
+[requirements.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/requirements.txt 
+[requirements.dev.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/requirements.dev.txt
+[Scott&Burgan-dialog-server]: https://fdobad.github.io/qgis-processingplugin-template/plugins.xml
+[Kitral simulator dialog-server]: https://fdobad.github.io/fire2am-kitral/plugins.xml 
+[Processing-Toolbox-server]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml
+[toolbox-releases]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/releases
+[toolbox-repo]: https://www.github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin

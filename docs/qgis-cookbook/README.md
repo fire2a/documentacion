@@ -36,15 +36,23 @@ An example install is made at the end of [next section](#anchor)
 1. On QGIS MenuBar: Plugins > Manage and Install Plugins... > Settings > Add... (button at the bottom right of Plugin Repositories section)  
 1. 'Repository details' dialog opens, fill form inputs:  
  Name: any, though "Fire2a" is suggested  
- URL: https://fdobad.github.io/qgis-processingplugin-template/plugins.xml (will change)
-1. Confirm (Ok button), repos will be reloaded and a success state should be seen from the fire2a repository
+ URL: _https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml_ (Unsure? use this one)  
+ URL: _https://fdobad.github.io/qgis-processingplugin-template/plugins.xml_ (rick roll & Scott&Burgan simulator dialog)  
+ URL: _https://fdobad.github.io/fire2am-kitral/plugins.xml_ (Kitral simulator dialog)  
+1. Confirm (Ok button), repos will be reloaded and a success state should be seen from the fire2a repository  
+
+{: .warning}
+Both simulator dialogs (Kitral and Scott&Burgan) can't be be simultaneously installed! And are not maintained! 
+
+{: .success}
+The __Processing-Toolbox__ plugin is the [way](https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml)
 
 <a name="anchor">
 ![](./img/install_plugin_server.gif)
 </a>
 
 ### placing a folder
-Download & unzip a release from the repo [releases](https://github.com/fdobad/qgis-processingplugin-template/releases) section  
+Download & unzip a release from the repo [toolbox-releases] or sample [release](https://github.com/fdobad/qgis-processingplugin-template/releases) sections
 Example: Unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plugin` must be moved to: 
 ```
 # linux (symbolic link it!)
@@ -129,8 +137,8 @@ cp /usr/share/applications/org.qgis.qgis.desktop ~/.local/share/applications/.
 ### modify
 Most projects include a `requirements.txt` file listing required distributions that provides the needed modules. 
 Save link as:
-* [Cell2fire plugin requirements](https://raw.githubusercontent.com/fdobad/C2FK/test/requirements.txt)
-* [Fire2a toolbox requirements](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/requirements.txt)  
+* [kitral-dialog-requirements.txt]
+* Fire2a toolbox [requirements](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/requirements.txt)  
 
 [_Take me to the tutorial because I don't know what the next commands do_](#python-environment)
 
@@ -190,8 +198,8 @@ QGIS comes bundled with its own python that's set up in a special way to integra
 To quickly install a python module into QGIS environment, just open `OSGeo4W Shell` app, then enter `pip install <distribution_name>` or `pip install -r C:\path\to\requirements.txt`
 
 Save link as:
-* [Cell2fire plugin requirements](https://raw.githubusercontent.com/fdobad/C2FK/test/requirements.txt)
-* [Fire2a toolbox requirements](https://raw.githubusercontent.com/fdobad/qgis-processingplugin-template/main/requirements.txt)  
+* Processing-Toolbox: [requirements.txt]  
+* Dialog Simulator [kitral-dialog-requirements.txt]
 
 ### making an environment launcher
 
@@ -226,3 +234,12 @@ Showing on the gif: After doing step 1 and 2, a success install of qtconsole bei
 
 ---
 [QGIS]: https://qgis.org
+[requirements.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/requirements.txt 
+[requirements.dev.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/requirements.dev.txt
+[Scott&Burgan-dialog-server]: https://fdobad.github.io/qgis-processingplugin-template/plugins.xml
+[Kitral simulator dialog-server]: https://fdobad.github.io/fire2am-kitral/plugins.xml 
+[Processing-Toolbox-server]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml
+[toolbox-releases]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/releases
+[toolbox-repo]: https://www.github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin
+[kitral-dialog-requirements.txt]: https://raw.githubusercontent.com/fdobad/fire2am-kitral/main/requirements.txt
+[TODO-Cell2Fire-requirements.txt]: https://github.com/fire2a/C2F-W

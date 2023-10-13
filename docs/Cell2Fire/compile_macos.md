@@ -6,6 +6,12 @@ parent: Cell2Fire++
 has_children: false
 has_toc: false
 ---
+{: .info}
+Integrate the binary to the [toolbox-plugin], by renaming it as:
+```
+ext=`python3 -c "import platform;print(f'.{platform.system()}.{platform.machine()}')"`
+mv Cell2Fire Cell2Fire$ext
+```
 ## MacOS
 This instructions works for either M1 or intel CPU
 
@@ -34,6 +40,7 @@ $ make clean
 $ make -f makefile.macos
 ```
 Something failed? If homebrew was installed for all users (instead of the default), choose your `makefile`: 
+
 ```
 # makefile.macos:
 /opt/homebrew/include
@@ -43,7 +50,7 @@ Something failed? If homebrew was installed for all users (instead of the defaul
 ```
 Further adjustments probably start at editing directories in `makefile`
 
-# Notes when installing LVM
+### Notes when installing LVM
 ```
 ==> llvm
 To use the bundled libc++ please add the following LDFLAGS:
@@ -61,13 +68,13 @@ For compilers to find llvm you may need to set:
   export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 ```
 
-# Next steps:
+### TBD Next steps:
 1. Make a macos-universal binary
 https://github.com/manojkarthick/macos-universal-binary-action
 2. When github enables arm64 arch, compile using matrix actions
 https://github.com/kryptokrona/njord/actions/runs/3602943270/workflow
 
-# Notes c++ on global variables
+### Notes c++ on global variables
 `fls` in `Kitral.cpp` was colliding with system `strings.h:fls`
 
 ```
@@ -79,3 +86,6 @@ int	 ffsl(long) __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
 int	 ffsll(long long) __OSX_AVAILABLE_STARTING(__MAC_10_9, __IPHONE_7_0);
 int	 fls(int) __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
 ```
+
+----
+[toolbox-plugin]: ../../docs/qgis-toolbox/README.html

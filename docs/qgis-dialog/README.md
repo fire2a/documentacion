@@ -1,7 +1,7 @@
 ---
 layout: default
 title: QGIS dialog-plugin
-nav_order: 2
+nav_order: 97
 has_children: true
 has_toc: false
 ---
