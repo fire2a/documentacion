@@ -18,8 +18,10 @@ With clearly delimited components: input, output, algorithm and context; it achi
 
 The idea behind this architecture is that the user composes its own pipeline, combining different algorithms to achieve their goal. This is a more flexible, reusable, scalable and easier to mantain approach than independent QGIS plugins, where each one is designed to a specific need with custom inputs, outputs and behavior. Making it nearly impossible to use them outside the window dialog mode less combining them.
 
-Currently 
-[This repo](https://github.com/fdobad/qgis-processingplugin-template) is a template for QGIS processing toolbox [plugins](https://plugins.qgis.org).
+{: .warning}
+Windows users must set `.tif` as their default raster format
+![](./img/windows_tif.png)
+
 # Algorithms
 ## Raster knapsack optimization
 ### Intro
@@ -61,6 +63,7 @@ __QGIS-plugin-repo [link](./plugins.xml)__
 ## standalone script
 
 ## script in QGIS Console
+
 ```
 from qgis import processing
 result = processing.run(
@@ -77,6 +80,9 @@ result = processing.run(
 )
 QgsProject.instance().addMapLayer(result['OUTPUT_layer'])
 ```
+
+# Template
+[This repo](https://github.com/fdobad/qgis-processingplugin-template) is a template for QGIS processing toolbox [plugins](https://plugins.qgis.org).
 
 ---
 [QGIS]: https://qgis.org
