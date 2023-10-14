@@ -30,6 +30,7 @@ QGIS does not handle plugin dependencies, so is up to the user to install them, 
 1. On QGIS MenuBar: Plugins > Manage and Install Plugins... > All  
 2. Type the plugin name
 3. Click Install  
+4. [For processing-toolbox type of plugins] Restart QGIS
 An example install is made at the end of [next section](#anchor)
 
 ### adding a custom plugin repo
