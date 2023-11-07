@@ -24,9 +24,12 @@ Currently hosted at [ISCI](https://isci.cl) offices.
 
 Contact us at <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
 
+Visit our public <a href=http://www.fire2a.com>webpage</a>.
+
 [{% avatar fire2a %}](https://github.com/fire2a/)
 [{% avatar jaimecarrasco %}](https://github.com/jaimecarrasco/)
-[{% avatar RodrigoMahalufRecasens size=30 %}](https://github.com/RodrigoMahalufRecasens/)
+[{% avatar lucasmurray %}](https://github.com//lucasmurray97)
+[{% avatar RodrigoMahalufRecasens size=25 %}](https://github.com/RodrigoMahalufRecasens/)
 [{% avatar davidpalaciosm %}](https://github.com/davidpalaciosm/)
 [{% avatar fulloaf %}](https://github.com/fulloaf/)
 [{% avatar fdobad size=40 %}](https://github.com/fdobad/)
