@@ -31,6 +31,8 @@ Users can create a new raster layer that selects the most valuable pixels in a r
 
 Several solvers can be used (cbc, glpk, cplex_direct, gurobi, ipopt, NEOS, etc.), thanks to the MIP being modeled and solved through [pyomo](http://www.pyomo.org).
 
+Before running this algorithm, make sure that you have installed the corresponding solvers that you want to use. See [pyomo documentation](https://pyomo.readthedocs.io/en/stable/installation.html#conditional-dependencies) for more  details.
+
 | screenshot |
 | --- |
 |<img src="img/screenshot.png"  alt='cannot load image' height=400px >|
