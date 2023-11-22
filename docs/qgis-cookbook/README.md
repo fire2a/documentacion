@@ -67,7 +67,7 @@ If the plugin is installed via a repo server url, updates will be prompted in QG
 If the plugin is installed via a repo server url, removing is easy as pressing uninstall on the plugin's description page. Else the folder must be manually deleted.
 NOTE: Removing a repo server url does not remove installed plugins.
 
-# Getting Help :ambulance:
+# Getting Help 🚑
 
 First, make sure that you have updated QGIS, our plugin (Fire Analytics Processing-Toolbox) and your Operating System (eg. Linux, Windows, MacOS). Then restart your computer and try again. If the problem persists, follow the next steps to report your issue[here](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/issues): 
 
