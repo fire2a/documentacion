@@ -235,7 +235,7 @@ Showing on the gif: After doing step 1 and 2, a success install of qtconsole bei
 
 ### Getting Help
 
-First, make sure that you have updated QGIS, our plugin (Fire Analytics Processing-Toolbox) and your Operating System (eg. Linux, Windows, MacOS). Then restart your computer and try again. If the problem persists, follow the next steps to report your issue[here](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/issues): 
+First, make sure that you have updated QGIS, our plugin (Fire Analytics Processing-Toolbox) and your Operating System (eg. Linux, Windows, MacOS). Then restart your computer and try again. If the problem persists, follow the next steps to report your issue [here](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/issues): 
 
 1. Identify your operating system, plugin, and QGIS version:
    - **Operating System:** [Specify your OS version here]
