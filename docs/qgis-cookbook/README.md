@@ -15,11 +15,7 @@ nav_order: 98
 {:toc}
 </details>
 
-# TODO
 
-1. Install Guides
-2. Python scripting
-3. Development guides
 
 # Plugin Management
 ## Installation
@@ -70,6 +66,22 @@ If the plugin is installed via a repo server url, updates will be prompted in QG
 ## Remove
 If the plugin is installed via a repo server url, removing is easy as pressing uninstall on the plugin's description page. Else the folder must be manually deleted.
 NOTE: Removing a repo server url does not remove installed plugins.
+
+# Getting Help :ambulance:
+
+First, make sure that you have updated QGIS, our plugin (Fire Analytics Processing-Toolbox) and your Operating System (eg. Linux, Windows, MacOS). Then restart your computer and try again. If the problem persists, follow the next steps to report your issue[here](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/issues): 
+
+1. Identify your operating system, plugin, and QGIS version:
+   - **Operating System:** [Specify your OS version here]
+   - **Plugin Version:** Navigate to `Plugins > Manage and Install Plugins... > Installed > Fire Analytics Processing-Toolbox > Installed version`. 
+  ![](./img/plugins_version.png){: width="75%" }
+   - **QGIS Version:** Click on `Help` and the click on `About`.
+  
+2. **Include Relevant Files:**
+   - Compress and attach the instance (`.zip` format) you were using when the error occurred.
+   - Attach/send the corresponding `qgis_log.html` file. This file contains important information about the error and can be found in the results directory.
+  
+When submitting the bug report, please provide as much detail as possible about the issue encountered, steps to reproduce it, and any error messages or unexpected behaviors observed. Clear and concise descriptions will assist us in identifying and resolving the problem efficiently.
 
 # Linux 🗽
 ## install
@@ -233,22 +245,11 @@ Showing on the gif: After doing step 1 and 2, a success install of qtconsole bei
 
 ![](./img/qgis_windows_single_user.gif){: width="75%" }
 
-### Getting Help
+# TODO
 
-First, make sure that you have updated QGIS, our plugin (Fire Analytics Processing-Toolbox) and your Operating System (eg. Linux, Windows, MacOS). Then restart your computer and try again. If the problem persists, follow the next steps to report your issue[here](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/issues): 
-
-1. Identify your operating system, plugin, and QGIS version:
-   - **Operating System:** [Specify your OS version here]
-   - **Plugin Version:** Navigate to `Plugins > Manage and Install Plugins... > Installed > Fire Analytics Processing-Toolbox > Installed version`. 
-  ![](./img/plugins_version.png){: width="75%" }
-   - **QGIS Version:** Click on `Help` and the click on `About`.
-  
-2. **Include Relevant Files:**
-   - Compress and attach the instance (`.zip` format) you were using when the error occurred.
-   - Attach/send the corresponding `qgis_log.html` file. This file contains important information about the error and can be found in the results directory.
-  
-When submitting the bug report, please provide as much detail as possible about the issue encountered, steps to reproduce it, and any error messages or unexpected behaviors observed. Clear and concise descriptions will assist us in identifying and resolving the problem efficiently.
-
+1. Install Guides
+2. Python scripting
+3. Development guides
 ---
 [QGIS]: https://qgis.org
 [requirements.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/requirements.txt 
