@@ -6,15 +6,15 @@ has_children: false
 ---
 Welcome to the Fire2a research group documentation, choose your component:
 
-[__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked]) and improved ([NowHere]): supports different fuel models, calculates a variety novel of metrics, deals with surface and vegetation moisture content; also enhancements in memory management, platform support, etc...)
+[__QGIS Fire Analytics Toolbox__](docs/qgis-toolbox/README.html): Our research as **user friendly graphical tools**: Simulate wildfires, get risk metrics, optimize firebreak location, etc. All from within [QGIS]. **Simple as filling a form**. Also available: drag'n'drop a box into a *GIS-data-science-pipeline*.
 
-[__QGIS Processing-Toolbox-plugin__](docs/qgis-toolbox/README.html): Next step: Clusterize your results, get firebreak placement recomendations, and more. A [QGIS] processing plugin to socialize our research.
+[__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked]) and improved ([Here]). Supports Canada, Kitral, S&B fuel models , surface and crown fire, deals with weather scenarios, surface and vegetation moisture content; various output metrics. Also enhances in memory management, platform support, etc. **C++ Only command line interface.**
 
-[__Algorithms Library__](docs/fire2a-lib.html): A python package to common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc...
+[__Algorithms Library__](docs/fire2a-lib.html) of common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc. **A python package.**
 
-[__QGIS Cookbook__](docs/qgis-cookbook/README.html): Install & Setup python environments, plugins and workflows...
+[__QGIS Cookbook__](docs/qgis-cookbook/README.html): Install & setup guides, python environments, plugins and workflows examples.
 
-[__QGIS Dialog-plugin__](docs/qgis-dialog/README.html): Simulate forest fires, get valuable metrics, in a user friendly graphical interface through [QGIS]. __Not maintained__, _graphical users should use the Processing-Toolbox._
+[__QGIS dialog DEPRECATED__](docs/qgis-dialog/README.html): Simulate forest fires, get valuable metrics, in a user friendly graphical interface through [QGIS]. __Not maintained__
 
 # About us
 
@@ -29,8 +29,7 @@ Visit our public <a href="http://www.fire2a.com">webpage</a>.
 [{% avatar fire2a %}](https://github.com/fire2a/)
 [{% avatar jaimecarrasco %}](https://github.com/jaimecarrasco/)
 [{% avatar lucasmurray %}](https://github.com//lucasmurray97)
-[{% avatar RodrigoMahalufRecasens size=25 %}](https://github.com/RodrigoMahalufRecasens/)
-[{% avatar davidpalaciosm %}](https://github.com/davidpalaciosm/)
+[{% avatar felipedlB %}](https://github.com/FelipedlB)
 [{% avatar fulloaf %}](https://github.com/fulloaf/)
 [{% avatar fdobad size=40 %}](https://github.com/fdobad/)
 [![](assets/images/aw.png){: width="40" }](https://www.dii.uchile.cl/~aweintra/)
@@ -46,4 +45,4 @@ It's all [markdown!](docs/markdown_kitchen_sink.html)
 ---
 [QGIS]: https://qgis.org
 [Forked]: https://github.com/cell2fire/Cell2Fire/
-[NowHere]: https://github.com/fire2a/C2F-W/
+[Here]: https://github.com/fire2a/C2F-W/

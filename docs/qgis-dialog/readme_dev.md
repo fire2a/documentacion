@@ -2,7 +2,7 @@
 layout: default
 title: expert dialog
 nav_order: 2
-parent: Cell2Fire QGIS-plugin
+parent: QGIS dialog DEPRECATED
 ---
 
 # Developer guide

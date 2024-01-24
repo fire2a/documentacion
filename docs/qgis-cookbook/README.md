@@ -3,7 +3,6 @@ layout: default
 title: QGIS cookbook
 nav_order: 98
 ---
-
 # QGIS Cookbook
 {: .no_toc}
 <details open markdown="block">
@@ -14,7 +13,6 @@ nav_order: 98
 1. TOC
 {:toc}
 </details>
-
 
 
 # Plugin Management

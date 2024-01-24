@@ -1,7 +1,7 @@
 ---
 layout: default
-title: QGIS processing-toolbox
-nav_order: 3
+title: QGIS Fire Analytics Toolbox
+nav_order: 1
 has_children: true
 has_toc : false
 ---

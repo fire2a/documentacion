@@ -1,17 +1,26 @@
 ---
 layout: default
-title: QGIS dialog-plugin
+title: QGIS dialog DEPRECATED
 nav_order: 97
 has_children: true
 has_toc: false
 ---
 
 # Cell 2 Fire QGIS plugin
+{: .no_toc}
+<details closed markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 This repo contains a [QGIS](https://qgis.org) [plugin](https://plugins.qgis.org/) for graphically interfacing with Cell2Fire [SB](https://github.com/fire2a/C2FSB) simulator.  
 Choose your guide:
-- [User](readme_user.md)![icon](img/icon.png)
-- [Developer](readme_dev.md)![icon](img/icon_dev.png)
+- [User](readme_user.html)![icon](img/icon.png)
+- [Developer](readme_dev.html)![icon](img/icon_dev.png)
 
 This softwares enables you to simulate thousand of forest fires on a landscape using QGIS. At least you'll need a fuel and elevation layer.
 

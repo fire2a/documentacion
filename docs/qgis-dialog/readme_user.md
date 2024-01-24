@@ -2,7 +2,7 @@
 layout: default
 title: user manual
 nav_order: 1
-parent: Cell2Fire QGIS-plugin
+parent: QGIS dialog DEPRECATED
 ---
 
         Fire 2 Advanced Analytics & Management Research Center,

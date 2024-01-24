@@ -5,6 +5,8 @@ nav_order: 2
 has_children: true
 has_toc: false
 ---
+{: .warning}
+CLI C++ code; Check the graphical user friendly version: [fire2a toolbox](docs/qgis-toolbox/README.html)
 # Cell2Fire++
 {: .no_toc}
 <details closed markdown="block">
@@ -16,13 +18,14 @@ has_toc: false
 {:toc}
 </details>
 
-__Currently an effort to unify and gather improvements of the three different versions is being done [HERE](https://github.com/fire2a/c2f-w)__
-
 Cell2Fire is a 2D-grid-based forest and wildland landscape fire simulator, focused on large scale areas and fast simulations to provide robust risk spatial analyitics, harnessing c++ parallel computation methods.
 
-Released flavors:
-- [Scott & Burgan](https://github.com/fire2a/C2FSB)  
-- [Kitral](https://github.com/fire2a/C2FK)  
+Current Version:
+- [W](https://github.com/fire2a/c2f-w) bundles all three fuel model behaviors!
+
+Released flavors (not maintained):
+- [Scott & Burgan](https://github.com/fire2a/C2FSB)
+- [Kitral](https://github.com/fire2a/C2FK)
 - [FBP](https://github.com/fire2a/C2FFBP)
 
 The [OG](https://github.com/cell2fire/Cell2Fire/)
