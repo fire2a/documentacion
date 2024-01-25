@@ -18,12 +18,12 @@ CLI C++ code; Check the graphical user friendly version: [fire2a toolbox](docs/q
 {:toc}
 </details>
 
-Cell2Fire is a 2D-grid-based forest and wildland landscape fire simulator, focused on large scale areas and fast simulations to provide robust risk spatial analyitics, harnessing c++ parallel computation methods.
+Cell2Fire is a 2D-grid-based forest and wildland landscape fire simulator, focused on large scale areas and fast simulations to provide robust risk spatial analytics, harnessing c++ parallel computation methods.
 
 Current Version:
 - [W](https://github.com/fire2a/c2f-w) bundles all three fuel model behaviors!
 
-Released flavors (not maintained):
+Released flavors (*no longer maintained*):
 - [Scott & Burgan](https://github.com/fire2a/C2FSB)
 - [Kitral](https://github.com/fire2a/C2FK)
 - [FBP](https://github.com/fire2a/C2FFBP)
