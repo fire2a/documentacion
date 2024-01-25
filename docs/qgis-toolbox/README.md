@@ -23,12 +23,6 @@ Our applied fire research compiled into a **user friendly graphical GIS tools**:
 
 Without leaving the graphical environment of [QGIS], just by installing our **processing algorithm plugin**.
 
-\begin{align}
-  x + 3y + 4z &= 2 \\
-      3y - 4z &= 5 \\
-            z &= 4
-\end{align}
-
 This type of plugins differ from the regular plugins -by being much more than a pop-up dialog- because they follow a data-science-pipeline architecture. 
 Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless integration with [QGIS] APIs (all other provided algorithms), providing 5 ways of being run:
 
