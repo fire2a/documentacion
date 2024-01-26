@@ -15,11 +15,11 @@ El objetivo del presente documento es mostrar como configurar R y conectarlo con
 
 Para descargar ambos programas puede dirigirse a este [link](https://posit.co/download/rstudio-desktop/ "Descargar R y RStudio") y seguir las instrucciones. En el caso de R, seleccione el que corresponda con su sistema operativo.
 
-[![Descarga de R, paso 1](images/Descarga%20de%20R.png){fig-align="center"}](https://cran.rstudio.com/)
+[![Descarga de R, paso 1](images/Descarga%20de%20R.png)](https://cran.rstudio.com/)
 
 Luego seleccione cualquiera de las opciones que muestran las flechas rojas y descargue la última versión de R (primera opción). Instale R en su computador.
 
-![Descarga de R, paso 2.](images/Descarga%20de%20R%20paso%202.png){fig-align="center"}
+![Descarga de R, paso 2.](images/Descarga%20de%20R%20paso%202.png)
 
 Una vez instalado, descargue e instale RStudio. Una vez instalado, abra RStudio.
 
