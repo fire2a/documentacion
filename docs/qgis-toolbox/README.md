@@ -15,30 +15,43 @@ has_toc : false
 1. TOC
 {:toc}
 </details>
-Our applied fire research compiled into a **user friendly graphical GIS tools**:
+## Overview
+Our applied fire research as **user friendly graphical GIS tools**:
 - *Simulate* large scale wildfires using Cell2Fire++
 - Get threat and risk *metrics*
 - Use the firebreak location *decision support system*
 - *Combine* our algorithms with any other [QGIS] algorithms easily
 
-Without leaving the graphical environment of [QGIS], just by installing our **processing algorithm plugin**.
+Without leaving the graphical environment of [QGIS], just by installing our **processing algorithm plugin** *fire2a-toolbox*.
 
 This type of plugins differ from the regular plugins -by being much more than a pop-up dialog- because they follow a data-science-pipeline architecture. 
-Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless integration with [QGIS] APIs (all other provided algorithms), providing 5 ways of being run:
+Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless integration with all other provided algorithms in the [toolbox], providing 5 ways of being run.
 
-1. Simple as filling a **form** (checkboxes, dropdowns, file-choosers, etc.); with the minimal inputs being a fuel raster and a weather scenario. 
-2. **Batch of forms**: fill in a data-sheet style (even supporting excel style formulas) where each row is one execution, to vary some otherwise static parameters.
-3. As part of a **graphical model workflow**: Drag and drop boxes of parameters and algorithms, conect arrows as input-ouputs between them, into a custom *GIS-data-science-pipeline*.
-4. **CLI PROCESS**
+## Usage alternatives
+1. Simple as *filling a **[form dialog]*** (checkboxes, dropdowns, file-choosers, etc.); with the minimal inputs being a fuel raster and a weather scenario. 
+2. **[Batch of forms]**: Execute sequential runs configuring them in data-sheet-style where each row is one (column-wise displayed) form, *easily experiment parameter sensitivities*.
+3. As part of a **[graphical model] workflow**: Drag and drop boxes of parameters and algorithms, conect arrows as input-ouputs between them, into a [custom] *GIS-data-science-pipeline*.
+4. From a **command line tool**, run `qgis_process` [cli wrapper] to call any processing algorithm *without QGIS graphical overhead*.
+5. **Python script**, working *both* [calling it] from the QGIS [python console] *or* as [standalone code]
 
-1. A window dialog on the [processing toolbox](https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html) interface
-2. A [command line interface](https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone) using `$ qgis_process`
-3. A python interface that can be used either 
-    on the [QGIS console](#script-in-qgis-console)
-    or as a [standalone](https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/script_samples/standalone.py) script.
-4. Modeler interface component? (not sure about this one)
+## Installing
+1. [QGIS] version > 3.28.12 (LTR version is mostly compatible but misses, for example, grouping simulation results; latest version is recommended)
+2. fire2a-toolbox installation can *almost* be done straight forward from QGIS **[plugin manager]** *but*:
+    - Python dependencies must be manually resolved  
+    - fire2a's custom plugin repo/store [link][toolbox-server] must be setup along the default (*)  
 
-The idea behind this architecture is that the user composes its own pipeline, combining different algorithms to achieve their goal. This is a more flexible, reusable, scalable and easier to mantain approach than independent [QGIS] plugins, where each one is designed to a specific need with custom inputs, outputs and behavior. Making it nearly impossible to use them outside the window dialog mode less combining them.
+3. Done: fire2a-toolbox icon will appear on the algorithms list of the Processing Toolbox Panel
+
+(*) : Because it contains compiled c++ binary code -providing the fast and parallel Cell2Fire simulator, however binary code cannot be easily verified hence the plugin is not allowed on the regular repo/store. Nevertheless all our code is open source, its build is "reproducible" by an automated action; all can be audited on [fire2a@github](https://github.com/fire2a)
+
+* **Testers** should instead install by `.zip` file from fire2a-toolbox [releases][toolbox-releases]
+* **Developers** should clone both repos, compile, symlink and setup additional python dependencies to contribute
+
+## First usage
+After setting up installation, getting or generating a fuel model raster can be challenging, tutorial coming soon
+1. An instances downloader algorithm is provided to getting prepared instances
+2. Setup an empty directory with the instances, save a project in it
+3. Drag and drop layers from the project home (file Browser Panel) into the Layer Panel
 
 {: .warning}
 Windows users must set `.tif` as their default raster format
@@ -110,10 +123,23 @@ QgsProject.instance().addMapLayer(result['OUTPUT_layer'])
 
 ---
 [QGIS]: https://qgis.org
+
 [requirements.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/requirements.txt 
 [requirements.dev.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/requirements.dev.txt
 [Scott&Burgan-dialog-server]: https://fdobad.github.io/qgis-processingplugin-template/plugins.xml
 [Kitral simulator dialog-server]: https://fdobad.github.io/fire2am-kitral/plugins.xml 
-[Processing-Toolbox-server]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml
-[toolbox-releases]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/releases
 [toolbox-repo]: https://www.github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin
+
+[graphical model]:(https://docs.qgis.org/latest/en/docs/user_manual/processing/modeler.html)
+[toolbox]: (https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html)
+[form dialog]: (https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html#the-algorithm-dialog)
+[Batch of forms]: (https://docs.qgis.org/latest/en/docs/user_manual/processing/batch.html#processing-batch)
+[cli wrapper]: (https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone)
+[python console]: (https://docs.qgis.org/latest/en/docs/user_manual/plugins/python_console.html#console)
+[calling it]: (https://docs.qgis.org/latest/en/docs/user_manual/processing/console.html)
+[standalone code]: (https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/script_samples/standalone.py)
+[custom]: (https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/tree/main/graphical_models)
+[plugin manager]: (https://docs.qgis.org/latest/en/docs/training_manual/qgis_plugins/fetching_plugins.html)
+
+[toolbox-server]: https://fire2a.github.io/fire-analytics-qgis-processing-toolbox-plugin/plugins.xml
+[toolbox-releases]: https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/releases
