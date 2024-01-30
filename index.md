@@ -6,9 +6,9 @@ has_children: false
 ---
 Welcome to the Fire2a research group documentation, choose your component:
 
-[__QGIS Fire Analytics Toolbox__](docs/qgis-toolbox/README.html): Our research as **user friendly graphical tools**: Simulate wildfires, get risk metrics, optimize firebreak location, etc. All from within [QGIS]. **Simple as filling a form**. Also available: drag'n'drop a box into a *GIS-data-science-pipeline*.
+[__QGIS Fire Analytics Toolbox__](docs/qgis-toolbox/README.html): Our research as **user friendly graphical tools**: Simulate wildfires, get risk metrics, optimize firebreak location, etc. All from within [QGIS]. **Simple as filling a form**. Also available: drag'n'drop boxes (algorithms) into a *GIS-data-science-pipeline*.
 
-[__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked]) and improved ([Here]). Supports Canada, Kitral, S&B fuel models , surface and crown fire, deals with weather scenarios, surface and vegetation moisture content; various output metrics. Also enhances in memory management, platform support, etc. **C++ Only command line interface.**
+[__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked]) and improved ([Here]). Supports Canada, Kitral, S&B fuel models , surface and crown fire, deals with weather scenarios, surface and vegetation moisture content; various output metrics. Also enhances in memory management, platform support, etc. **C++ only command line interface.**
 
 [__Algorithms Library__](docs/fire2a-lib.html) of common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc. **A python package.**
 
