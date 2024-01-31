@@ -2,18 +2,12 @@
 layout: default
 title: compiling on MacOS
 nav_order: 2
-parent: Cell2Fire++
+parent: Cell2Fire++ simulator
 has_children: false
 has_toc: false
 ---
-{: .info}
-Integrate the binary to the [toolbox-plugin], by renaming it as:
-```
-ext=`python3 -c "import platform;print(f'.{platform.system()}.{platform.machine()}')"`
-mv Cell2Fire Cell2Fire$ext
-```
-## MacOS
-This instructions works for either M1 or intel CPU
+# MacOS
+This instructions work for either M1 or intel CPU
 
 0. check your architecture executing `arch` on the terminal app
 1. app store > install xcode
@@ -29,17 +23,26 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 ```
-4. open new terminal
-### compile
+5. open new terminal
+
+## compile
 ```
 # Install dependencies 
 #  maybe missing boost-mpi boost-build, llvm for intel?
 $ brew install boost eigen gcc libopenmpt
 $ cd Cell2FireC
-$ make clean
+$ make clean -f makefile.macos
 $ make -f makefile.macos
 ```
 Something failed? If homebrew was installed for all users (instead of the default), choose your `makefile`: 
+
+{: .info}
+Rename the compiled the binary `Cell2Fire` so the [toolbox-plugin] uses it:
+```
+ext=`python3 -c "import platform;print(f'.{platform.system()}.{platform.machine()}')"`
+cp Cell2Fire Cell2Fire$ext
+cp Cell2Fire$ext ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/fireanalyticstoolbox/simulator/C2F/Cell2FireC/.
+```
 
 ```
 # makefile.macos:
@@ -50,7 +53,7 @@ Something failed? If homebrew was installed for all users (instead of the defaul
 ```
 Further adjustments probably start at editing directories in `makefile`
 
-### Notes when installing LVM
+## Notes when installing LVM
 ```
 ==> llvm
 To use the bundled libc++ please add the following LDFLAGS:
@@ -68,13 +71,14 @@ For compilers to find llvm you may need to set:
   export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 ```
 
-### TBD Next steps:
+## TBD Next steps:
+
 1. Make a macos-universal binary
 https://github.com/manojkarthick/macos-universal-binary-action
 2. When github enables arm64 arch, compile using matrix actions
 https://github.com/kryptokrona/njord/actions/runs/3602943270/workflow
 
-### Notes c++ on global variables
+## Notes c++ on global variables
 `fls` in `Kitral.cpp` was colliding with system `strings.h:fls`
 
 ```

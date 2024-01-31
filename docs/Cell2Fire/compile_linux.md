@@ -2,7 +2,7 @@
 layout: default
 title: compiling on Linux
 nav_order: 1
-parent: Cell2Fire++
+parent: Cell2Fire++ simulator
 has_children: false
 has_toc: false
 ---

@@ -1,3 +1,11 @@
+---
+layout: default
+title: Raster knapsack optimization
+nav_order: 2
+has_children: false
+has_toc : false
+parent: QGIS Fire Analytics Toolbox
+---
 ## Raster knapsack optimization
 ### Intro
 _A proof-of-concept integration of mathematical programming solvers to model and solve optimization problems with GIS entities._
@@ -10,7 +18,7 @@ Before running this algorithm, make sure that you have installed the correspondi
 
 | screenshot |
 | --- |
-|<img src="img/screenshot.png"  alt='cannot load image' height=400px >|
+|<img src="/docs/assets/algo_knapsack_screenshot.png"  alt='cannot load image' height=400px >|
 
 ### Detailed description
 By selecting a Values layer and/or a Weights layer, and setting the bound on the total capacity, a layer that maximizes the sum of the values of the selected pixels is created.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cell2Fire++
+title: Cell2Fire++ simulator
 nav_order: 2
 has_children: true
 has_toc: false
@@ -54,18 +54,45 @@ Releases are bundled with pre-compiled binaries, normal users probably don't nee
 
 Check the [repo's action artifacts](https://github.com/fire2a/C2F-W/actions) for the latest info on automated builds
 
-## Overview
+## UNIX Overview
 ```bash
 # install build-essentials, gcc-12, boost, eigen3 & openmp
-cd Cell2FireC
-make clean
-# sample makefiles for linux & macos provided
+
+cd
+git clone git@github.com:fire2a/C2F-W.git
+
+# go to c++ files
+cd C2F-W/Cell2FireC
+
+# clean & build [select platform makefile]
+make clean [-f custom_makefile]
 make [-f custom_makefile]
 
-# integrate with qgis-toolbox:
-ext=`python3 -c "import platform;print(f'.{platform.system()}.{platform.machine()}')"`
-mv Cell2Fire Cell2Fire$ext
 ```
+### developer setup
+```bash
+# rename binary for the QGIS toolbox plugin
+ext=`python3 -c "import platform;print(f'.{platform.system()}.{platform.machine()}')"`
+cp Cell2Fire Cell2Fire$ext
+
+cd
+git clone git@github.com:fire2a/fire-analytics-qgis-processing-toolbox-plugin.git fire-toolbox
+
+source ~/your/venv/bin/activate
+(venv) $ pip install -r fire-toolbox/fireanalyticstoolbox/requirements.txt
+
+git clone git@github.com:fire2a/fire2a-lib
+cd fire2a-lib
+(venv) $ pip install -e .
+
+# symlink C2F-W repo into C2F directory of the fire2a-toolbox repo
+ln -s C2F-W fire-toolbox/fireanalyticstoolbox/simulator/C2F
+
+cd ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
+ln -s ~/source/fire-toolbox/fireanalyticstoolbox .
+```
+Next time you start QGIS, look for fire2a-toolbox icon <img src="/docs/assets/bonfire.png"  style="height: 16px">, on the Processing Toolbox panel.
+
 ## Linux
 [Make](compile_linux.html)
 

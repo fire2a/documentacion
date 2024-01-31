@@ -5,8 +5,9 @@ nav_order: 1
 has_children: true
 has_toc : false
 ---
-<i img="max-width: 10%"></i>
-# Fire Analytics Toolbox
+<h1>
+Fire Analytics Toolbox
+</h1>
 {: .no_toc}
 <details closed markdown="block">
   <summary>
@@ -16,7 +17,7 @@ has_toc : false
 1. TOC
 {:toc}
 </details>
-## Overview
+# Overview
 Our applied fire research as **user friendly graphical GIS tools**:
 - *Simulate* large scale wildfires using Cell2Fire++
 - Get threat and risk *metrics*
@@ -28,28 +29,28 @@ Without leaving the graphical environment of [QGIS], just by installing our **pr
 This type of plugins differ from the regular plugins -by being much more than a pop-up dialog- because they follow a data-science-pipeline architecture. 
 Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless integration with all other provided algorithms in the [toolbox], providing 5 ways of being run.
 
-## Usage alternatives
+# Usage alternatives
 1. Simple as *filling a **[form dialog]*** (checkboxes, dropdowns, file-choosers, etc.); with the minimal inputs being a fuel raster and a weather scenario. 
 2. **[Batch of forms]**: Execute sequential runs configuring them in data-sheet-style where each row is one (column-wise displayed) form, *easily experiment parameter sensitivities*.
 3. As part of a **[graphical model] workflow**: Drag and drop boxes of parameters and algorithms, conect arrows as input-ouputs between them, into a [custom] *GIS-data-science-pipeline*.
 4. From a **command line tool**, run `qgis_process` [cli wrapper] to call any processing algorithm *without QGIS graphical overhead*.
 5. **Python script**, working *both* [calling it] from the QGIS [python console] *or* as [standalone code]
 
-## Installing
-[Full guide here](./plugin_installation.html) or overview:
+# Installing
+[Full guide here](/docs/qgis-cookbook.html) or overview:
 1. [QGIS] version > 3.28.12 (LTR version is mostly compatible but misses, for example, grouping simulation results; latest version is recommended)
 2. fire2a-toolbox installation can *almost* be done straight forward from QGIS **[plugin manager]** *but*:
     - Python [dependencies][requirements.txt] must be manually resolved  
     - fire2a's plugin repo/store [link][toolbox-server] must be added as a custom plugin source (*)  
 
-**Done!** *fire2a-toolbox icon <img src="./img/bonfire.png"  style="height: 16px"> will appear on the algorithms list of the Processing Toolbox Panel*
+**Done!** *fire2a-toolbox icon <img src="/docs/assets/bonfire.png"  style="height: 16px"> will appear on the algorithms list of the Processing Toolbox Panel*
 
 (*) : Because it contains compiled c++ binary code -for Cell2Fire simulator, but binary code cannot be easily verified hence the plugin is not allowed on the [regular repo/store](https://plugins.qgis.org/). Nevertheless all our code is open source, its build is "reproducible" by an automated action; all can be audited on [fire2a@github](https://github.com/fire2a)
 
 * **Testers** should instead install by `.zip` file from fire2a-toolbox [releases][toolbox-releases]
-* **Developers** should clone both repos, compile, symlink and setup additional python dependencies to contribute
+* **Developers** should clone our repos ([toolbox-repo], [c2f-repo], [fire2a-lib-repo]), compile cell2fire, symlink and setup additional python dependencies to contribute ([tl;dr](/docs/Cell2Fire/README.html#unix-overview))
 
-## First test run
+# First test run
 Getting or generating a fuel model raster can be challenging (tutorial coming soon), so the simplest way is to:
 1. Use the downloader algorithm <img src="./img/downloader.svg"  style="height: 16px"> to get a prepared instance
 2. Save an empty [project] into the downloaded folder (where fuels, elevation and Weather.csv files are)
@@ -59,11 +60,12 @@ Getting or generating a fuel model raster can be challenging (tutorial coming so
 
 Step 2 can be skipped but is more cumbersome to select each layer from a file explorer than to use the dropdown to select between current loaded layers; Also `Weather.csv` is automatically selected.
 
-## Current deployed algorithms
+# Current deployed algorithms
 1. Cell2Fire Simulator
 2. Simulator Post Processing
 3. Risk Metrics Calculator
 4. Instances Downloader
+5. [Raster knapsack optimization](./algo_knapsack.html)
 
 ---
 [QGIS]: https://qgis.org
@@ -74,6 +76,9 @@ Step 2 can be skipped but is more cumbersome to select each layer from a file ex
 [Scott&Burgan-dialog-server]: https://fdobad.github.io/qgis-processingplugin-template/plugins.xml
 [Kitral simulator dialog-server]: https://fdobad.github.io/fire2am-kitral/plugins.xml 
 [toolbox-repo]: https://www.github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin
+[c2f-repo]: https://www.github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin
+[fire2a-lib-repo]: https://www.github.com/fire2a/fire2a-lib
+
 
 [graphical model]: https://docs.qgis.org/latest/en/docs/user_manual/processing/modeler.html
 [toolbox]: https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html

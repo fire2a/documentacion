@@ -2,7 +2,7 @@
 layout: default
 title: compiling with Visual Studio
 nav_order: 3
-parent: Cell2Fire++
+parent: Cell2Fire++ simulator
 has_children: false
 has_toc: false
 ---

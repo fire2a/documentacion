@@ -5,7 +5,7 @@ nav_order: 3
 has_toc: false
 ---
 {: .warning}
-CLI Python code; Check the graphical user friendly version: [fire2a toolbox](docs/qgis-toolbox/README.html)
+CLI Python code; Check the graphical user friendly version: [fire2a toolbox](/docs/qgis-toolbox/README.html)
 # fire2a-lib
 {: .no_toc}
 <details closed markdown="block">
@@ -21,7 +21,7 @@ This library is python package composed of our novel fire related algorithms, co
 
 Some use cases:
 
-* Want to look at DownStream Protection Value implementation code?
+* Want to look/use/adapt DownStream Protection Value implementation code?
 * I forgot again, how to load a .tif raster into a numpy array + a properties dictionary?
 
 Developers & academic researchers are welcome to contribute!
@@ -37,6 +37,7 @@ $ ipython
 In [1]: from fire2a.<press-tab-to-continue>
 ```
 Algo check the [qgis-cookbook] and [Repository] guides.
+[tl;dr developer here](/docs/Cell2Fire/README.html#unix-overview)
 
 ---
 [QGIS]: https://qgis.org

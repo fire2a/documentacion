@@ -2,7 +2,6 @@
 title: Home
 layout: home
 nav_order: 99
-has_children: false
 ---
 Welcome to the Fire2a research group documentation, choose your component:
 
@@ -28,11 +27,16 @@ Visit our public <a href="http://www.fire2a.com">webpage</a>.
 
 [{% avatar fire2a %}](https://github.com/fire2a/)
 [{% avatar jaimecarrasco %}](https://github.com/jaimecarrasco/)
-[{% avatar lucasmurray %}](https://github.com//lucasmurray97)
-[{% avatar felipedlB %}](https://github.com/FelipedlB)
+[{% avatar lucasmurray97 %}](https://github.com//lucasmurray97/)
+[{% avatar FelipedlB %}](https://github.com/FelipedlB/)
 [{% avatar fulloaf %}](https://github.com/fulloaf/)
 [{% avatar fdobad size=40 %}](https://github.com/fdobad/)
 [![](assets/images/aw.png){: width="40" }](https://www.dii.uchile.cl/~aweintra/)
+
+
+[{% avatar Sigggma %}](https://github.com/Sigggma/)
+[{% avatar matisuno %}](https://github.com/matiasuno/)
+[{% avatar diegoteran99 %}](https://github.com/diegoteran99/)
 
 ![ci](https://github.com/fire2a/docs/actions/workflows/ci.yml/badge.svg)
 ![pages](https://github.com/fire2a/docs/actions/workflows/pages.yml/badge.svg)

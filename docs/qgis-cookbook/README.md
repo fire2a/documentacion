@@ -2,7 +2,11 @@
 layout: default
 title: QGIS cookbook
 nav_order: 4
+has toc: true
 ---
+<h1>
+QGIS cookbook
+</h1>
 {: .no_toc}
 <details open markdown="block">
   <summary>
@@ -12,7 +16,6 @@ nav_order: 4
 1. TOC
 {:toc}
 </details>
-
 # Getting Help 🚑
 
 Before reaching out, make the sanity test:
@@ -175,8 +178,10 @@ B. "Terminal" install
 Windows version of QGIS comes bundled with its own python, a special launcher must be used to access it
 ### installing requirements
 1. Download [requirements.txt] list (2ndary clicking the link and Save Link As...)
-2. Activate QGIS python by starting `OSGeo4W Shell` app (Win button > type OSGeo > select & click to launch) a CMD terminal will rise 
-3. Type `pip install -r C:\Users\<replace with your USERNAME>\Downloads\requirements.txt` > type Enter. (Adjust the path as needed, on Windows 11 you can select the file with the secondary button then click 'Copy path', use 2ndary click to paste into CMD terminal)
+2. Activate QGIS python by starting `OSGeo4W Shell` app `Win button > type OSGeo > select & click` to launch a CMD terminal 
+3. Type `pip install -r "%USERPROFILE%\Downloads\requirements.txt"` press Enter. (Adjust the path as needed, on Windows 11 you can select the file with the secondary button then click 'Copy path', use 2ndary click to paste into CMD terminal)
+
+![](./img/install_win_pip_requirements.gif){: width="75%" }
 
 ### making a python environment launcher
 
@@ -222,27 +227,38 @@ There are 3 ways of installing plugins, the recommended (using a our custom repo
 ## Install fire2a toolbox
 (check explainer gif after for steps 3 and 4)
 1. Install QGIS for [Linux🗽](#linux-), [MacOS](#macos-) or [Windows](#windows-)
-2. Install python dependencies for [Linux🗽](#python), [MacOS](#python-1) or [Windows](#python-2)
+2. Install python dependencies for [Linux🗽](#python), [MacOS](#python-1), [Windows](#python-2) ... or [last resort](forcing-python-requirements.html)
 3. Add fire2a's plugin repo/store [URL][toolbox-server] to custom plugin sources   
 * [tutorial][custom] 
-* `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Settings' > Plugin Repositories 'Add' > fill Name & paste URL > Ok`
-* ![](./img/tldr_add_plugin_source.png){: width="55%" }
-4. Do a regular [new plugin] installation 
+* `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Settings' > Plugin Repositories 'Add' > fill Name & paste URL > Ok`  
+![](./img/tldr_add_plugin_source.png){: width="55%" }
+<a name="anchor">
+![](./img/install_plugin_server.gif){: width="75%" }
+</a>
+* Note: removing the repo server does not uninstall its plugins
+
+4. Do a regular new plugin installation 
 * [tutorial][new plugin]
 * `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Not installed' > search box 'fire' > select > 'Install Plugin' > 'Ok'`
-* If it doesn't appear right away on the processing toolbox panel, toggle the checkbox next to its name on the Plugin Manager - Installed
-* ![](./img/tldr_install_plugin.png){: width="55%" }
+* Note: *At the time of writing the `Plugin Dependencies Manager` wait wheel spins forever, press `Ok` rightaway; you already installed them in step 2*
+* If it doesn't appear right away on the Processing Toolbox panel:  
+&nbsp;A. toggle the checkbox next to its name in the `Installed` section of the `Plugin Manager`  
+&nbsp;B. restart QGIS  
+![](./img/tldr_install_plugin.png){: width="55%" }
+![](./img/install_fire2a_toolbox.gif){: width="95%" }
 
-<a name="anchor">
-![](./img/install_plugin_server.gif)
-</a>
-NOTE: Removing the repo server url does not remove installed plugins.
-
-## Other installation options
+## Other options
 ### Install from ZIP
+1. Browse to:
+* [releases](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/releases)
+* [latest release](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/releases/latest)
+2. Download a release from a tag section, in the Assets part, it looks like `fireanalyticstoolbox_v1818.5.5-beta.zip`
+3. `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Install from ZIP' > '...' > 'Install Plugin'` (also dropping the zip into the input works)
+
 ### Place a folder
-Download & unzip a release from the repo [toolbox-releases] or sample [release](https://github.com/fdobad/qgis-processingplugin-template/releases) sections
-Example: Unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plugin` must be moved to: 
+Download & unzip a release from the repo [toolbox-releases] or sample [release](https://github.com/fdobad/qgis-processingplugin-template/releases) sections.
+
+For example, unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plugin` must be moved to: 
 ```
 # linux (symbolic link it!)
 ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
