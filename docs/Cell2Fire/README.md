@@ -35,19 +35,19 @@ The [OG](https://github.com/cell2fire/Cell2Fire/)
 
 ## Scott & Burgan
 ### Previncat's Zone 60 (Catalonian Instance): forest and a simulated fire spread with its corresponding scar and growth propagation tree. 
-![Example-Instance_Scar](./img/c2fsb-example-scar.png)
+![Example-Instance_Scar](img/c2fsb-example-scar.png)
 ### Risk metrics: Burn Probability (BP), Betweenness Centrality (BC), Downstream Protection Value (DPV), and Growth Propagation Tree (GPT). 
-![Example-Risck_Metrics](./img/c2fsb-example-metrics.png)
+![Example-Risck_Metrics](img/c2fsb-example-metrics.png)
 
 ## Kitral
 ### El Portillo, simulation with crown fire behavior.
-![Example-El Portillo-Crown fire](./img/c2fk-El_portillo.png)
+![Example-El Portillo-Crown fire](img/c2fk-El_portillo.png)
 
 ## Canadian Forest Fire Behavior Prediction System
 
 |:-------------|:------------------|
-| Dogrib forest, Canada ![](./img/c2fFBP-Example4.png){: width="100%" } | shortest paths propagation ![](./img/c2fFBP-Example1.png){: width="80%" } |
-| Shortest paths propagation and ROS intensity ![](./img/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](./img/c2fFBP-Example3.png){: width="80%" } |
+| Dogrib forest, Canada ![](img/c2fFBP-Example4.png){: width="100%" } | shortest paths propagation ![](img/c2fFBP-Example1.png){: width="80%" } |
+| Shortest paths propagation and ROS intensity ![](img/gc/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](img/c2fFBP-Example3.png){: width="80%" } |
 
 # Compiling
 Releases are bundled with pre-compiled binaries, normal users probably don't need this guide.
