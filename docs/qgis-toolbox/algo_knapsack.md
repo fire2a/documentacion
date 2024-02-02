@@ -18,7 +18,7 @@ Before running this algorithm, make sure that you have installed the correspondi
 
 | screenshot |
 | --- |
-|<img src="/assets/algo_knapsack_screenshot.png"  alt='cannot load image' height=400px >|
+|<img src="img/algo_knapsack_screenshot.png"  alt='cannot load image' height=400px >|
 
 ### Detailed description
 By selecting a Values layer and/or a Weights layer, and setting the bound on the total capacity, a layer that maximizes the sum of the values of the selected pixels is created.

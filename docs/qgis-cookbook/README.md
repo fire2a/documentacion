@@ -32,7 +32,7 @@ If the problem persists, follow the next steps to report your issue[here](https:
        -- MacOS : `Apple > TODO`  
        -- Linux: `$ uname -a`
    - **Plugin Version:** Navigate to `Plugins > Manage and Install Plugins... > Installed > Fire Analytics Processing-Toolbox > Installed version`. 
-  ![](./img/plugins_version.png){: width="75%" }
+  ![](img/plugins_version.png){: width="75%" }
    - **QGIS Version:** `Menu :Help > click About` copy at least the first paragraph
   
 2. **Include Relevant Files:**
@@ -181,7 +181,7 @@ Windows version of QGIS comes bundled with its own python, a special launcher mu
 2. Activate QGIS python by starting `OSGeo4W Shell` app `Win button > type OSGeo > select & click` to launch a CMD terminal 
 3. Type `pip install -r "%USERPROFILE%\Downloads\requirements.txt"` press Enter. (Adjust the path as needed, on Windows 11 you can select the file with the secondary button then click 'Copy path', use 2ndary click to paste into CMD terminal)
 
-![](./img/install_win_pip_requirements.gif){: width="75%" }
+![](img/install_win_pip_requirements.gif){: width="75%" }
 
 ### making a python environment launcher
 
@@ -208,7 +208,7 @@ Copy and modify `python-qgis.bat` that comes in QGIS `bin` folder, in these 3 st
     cmd.exe /k
 ```
 
-![](./img/qgis_windows_activate_venv.gif){: width="75%" }
+![](img/qgis_windows_activate_venv.gif){: width="75%" }
 
 ### make it writable 
 Recommended for machines with a single user, or to share modifications to the environment to all users (explainer gif after)
@@ -218,7 +218,7 @@ Recommended for machines with a single user, or to share modifications to the en
     - surely: `Win button > type QGIS > 2ndary click > Open file location > 2ndary click > Open file location > click 'bin' folder`
 2. Select `Python39` (check same version), properties, security, ... full control for user.
 
-![](./img/qgis_windows_single_user.gif){: width="75%" }
+![](img/qgis_windows_single_user.gif){: width="75%" }
 
 Also on the gif, a success install of qtconsole being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path, meaning success in making the python environment writable
 
@@ -231,9 +231,9 @@ There are 3 ways of installing plugins, the recommended (using a our custom repo
 3. Add fire2a's plugin repo/store [URL][toolbox-server] to custom plugin sources   
 * [tutorial][custom] 
 * `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Settings' > Plugin Repositories 'Add' > fill Name & paste URL > Ok`  
-![](./img/tldr_add_plugin_source.png){: width="55%" }
+![](img/tldr_add_plugin_source.png){: width="55%" }
 <a name="anchor">
-![](./img/install_plugin_server.gif){: width="75%" }
+![](img/install_plugin_server.gif){: width="75%" }
 </a>
 * Note: removing the repo server does not uninstall its plugins
 
@@ -244,8 +244,8 @@ There are 3 ways of installing plugins, the recommended (using a our custom repo
 * If it doesn't appear right away on the Processing Toolbox panel:  
 &nbsp;A. toggle the checkbox next to its name in the `Installed` section of the `Plugin Manager`  
 &nbsp;B. restart QGIS  
-![](./img/tldr_install_plugin.png){: width="55%" }
-![](./img/install_fire2a_toolbox.gif){: width="95%" }
+![](img/tldr_install_plugin.png){: width="55%" }
+![](img/install_fire2a_toolbox.gif){: width="95%" }
 
 ## Other options
 ### Install from ZIP

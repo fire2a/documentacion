@@ -11,13 +11,13 @@ The simulator dialog is divided in four main sections: *Landscape, ignitions, we
 Altough intuitive (e.g. match each dimensional unit shown in square brackets), each section is commented below:
 
 1. Landscape  
-![Landscape](/assets/algo_sim-landscape.png){: width="85%"}
+![Landscape](img/algo_sim-landscape.png){: width="85%"}
 * The surface fuel model must match the fuel raster codification (see [lookup tables])
 * The style fuel raster checkbox not only "paints" using 'native:setlayerstyle' algorithm according to each [qml layer style], but also show the classification on the Layers panel
 * Enabling crown fire behavior makes sense *even without canopy rasters because there are fixed standard numbers* for them according to the fuel codification (Only available in Canada's fuel model)
 
 2. Ignitions  
-![Ignitions](/assets/algo_sim-ignition.png){: width="85%"}
+![Ignitions](img/algo_sim-ignition.png){: width="85%"}
 * When simulating **one or few simulations**, a detailed output is relevant (like **propagation digraph and propagation scars**)
 * When simulating **hundreds or thousands**, mean and std.dev. statistics are more important than detailed output that can choke the computer unnecessarily (use **final scar** instead of propagation scars; propagation digraph is input for DPV and Centrality measures; but it can't be loaded into view!)
 * There are 3 ways to generate ignitions:  
@@ -28,7 +28,7 @@ Altough intuitive (e.g. match each dimensional unit shown in square brackets), e
 * Note that afterwards there's a random seed input, hence same seed implies drawing the same point(s sequence)
 
 3. Weather  
-![Weather](/assets/algo_sim-weather.png){: width="85%"}
+![Weather](img/algo_sim-weather.png){: width="85%"}
 * The simulator assumes **constant weather parameters across the grid**, they can change over time, but not space
 * These parameters are passed into the simulator using a `.csv` file
 * In a regular simulation **each row lasts 1 hour**, when the rows end, the simulation ends
@@ -56,22 +56,22 @@ Scott&Burgan
 
 {:style="counter-reset:step-counter 3"}
 4. Run Configuration  
-![Run configuration](/assets/algo_sim-run-config.png){: width="85%"}
+![Run configuration](img/algo_sim-run-config.png){: width="85%"}
 * Only lower the simulation cpu threads if you plan to keep working on something else while the simulations run in the background (for office or web-browsing you'll never need more than 2)  
 * Keeping track of the seed yields reproducibility for all generated random numbers  
 
 5. Outputs   
 This section has three main parts: options, advanced and destination directories.
-![Outputs](/assets/algo_sim-outputs-closedadvanced.png){: width="85%"}  
+![Outputs](img/algo_sim-outputs-closedadvanced.png){: width="85%"}  
 
     1. Options: By clicking the '...' button on the right, access to a multiple selection  
-    ![Simulator outputs](/assets/algo_sim-options.png){: width="85%"}  
+    ![Simulator outputs](img/algo_sim-options.png){: width="85%"}  
     * Most outputs adapt according to being 1 or >1 simulations
     * When simulating **one or few simulations**, a detailed output is relevant (like **propagation digraph and propagation scars**)
     * When simulating **hundreds or thousands**, mean and std.dev. statistics are more important than detailed output that can choke the computer unnecessarily (use **final scar** instead of propagation scars; propagation digraph is input for DPV and Centrality measures; but it can't be loaded into view!)
 
     2. Advanced options
-    ![Advanced](/assets/algo_sim-advanced.png){: width="85%"}
+    ![Advanced](img/algo_sim-advanced.png){: width="85%"}
     * Any **command line parameters can be appended** at your own risk!, refer to [Cell2Fire.ReadArgs.cpp](https://github.com/fire2a/C2F-W/blob/main/Cell2FireC/ReadArgs.cpp#L40), and [cell2fire.py.ParseArgs](https://github.com/fire2a/C2F-W/blob/main/Cell2FireC/cell2fire.py#L19) for documentation
     * Dry run is useful for building the instance folder and getting the full command line that would be executed, as a way to **verify or modify the instance before running**
         1. Windows users must open OSGeo4W shell before running cell2fire.py
@@ -87,19 +87,19 @@ Temporary
 
 Manually
 : specify them: by absolute path o relative to user's home[?]
-![](/assets/algo_sim-output-instance-results-input.png)
+![](img/algo_sim-output-instance-results-input.png)
 
 Instance along project
 : A directory named `firesim_YYMMDD_HHMMSS` will be created; the project must be saved [in a location without spaces in its path]
-![](/assets/algo_sim-output-instance-checkbox.png)
+![](img/algo_sim-output-instance-checkbox.png)
 
 Results inside Instance
 : A directory named `results` will be created inside Instance (default)
-![](/assets/algo_sim-output-results-checkbox.png)
+![](img/algo_sim-output-results-checkbox.png)
 
 
 ## Full Dialog 
-![Full Dialog](/assets/algo_sim-dialog.png){: width="85%"}
+![Full Dialog](img/algo_sim-dialog.png){: width="85%"}
 
        
 ---

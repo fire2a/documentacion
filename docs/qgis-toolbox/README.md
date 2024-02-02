@@ -43,7 +43,8 @@ Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless 
     - Python [dependencies][requirements.txt] must be manually resolved  
     - fire2a's plugin repo/store [link][toolbox-server] must be added as a custom plugin source (*)  
 
-**Done!** *fire2a-toolbox icon <img src="/assets/bonfire.png"  style="height: 16px"> will appear on the algorithms list of the Processing Toolbox Panel*
+**Done!** *fire2a-toolbox icon <img src="/assets/bonfire.png"  style="height: 16px"> will <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px"> appear on the algorithms list of the Processing Toolbox Panel*
+
 
 (*) : Because it contains compiled c++ binary code -for Cell2Fire simulator, but binary code cannot be easily verified hence the plugin is not allowed on the [regular repo/store](https://plugins.qgis.org/). Nevertheless all our code is open source, its build is "reproducible" by an automated action; all can be audited on [fire2a@github](https://github.com/fire2a)
 

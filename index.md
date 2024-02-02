@@ -31,7 +31,7 @@ Visit our public <a href="http://www.fire2a.com">webpage</a>.
 [{% avatar FelipedlB %}](https://github.com/FelipedlB/)
 [{% avatar fulloaf %}](https://github.com/fulloaf/)
 [{% avatar fdobad size=40 %}](https://github.com/fdobad/)
-[![](assets/aw.png){: width="40" }](https://www.dii.uchile.cl/~aweintra/)
+[![](docs/assets/aw.png){: width="40" }](https://www.dii.uchile.cl/~aweintra/)
 
 
 [{% avatar Sigggma %}](https://github.com/Sigggma/)
