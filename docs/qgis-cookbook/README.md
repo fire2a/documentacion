@@ -2,7 +2,7 @@
 layout: default
 title: QGIS cookbook
 nav_order: 4
-has toc: true
+has toc: false
 ---
 <h1>
 QGIS cookbook
@@ -22,11 +22,15 @@ Before reaching out, make the sanity test:
 * QGIS is updated (please try switching from LTR to latest)
 * Fire2a toolbox is updated (`Menu : Plugins > Manage and Install Plugins... > Installed > Fire Analytics Processing-Toolbox > Upgrade`)
 * Your Operating System (OS e.g. Linux, Windows, MacOS) is updated
+* No funny formats in `Options > Processing > default raster & vector layers, set to tif & gpkg`  
+    ![](img/qgis_set_default_formats.png){: width="50%"}
 * Restart your computer and try again on a fresh QGIS project on a directory that is *not shared* (no OneDrive, GoogleDrive, network drive, etc.) and has no spaces in its name
 
-If the problem persists, follow the next steps to report your issue[here](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/issues): 
+If the problem persists, follow the next steps to create an issue [here](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/issues): 
 
-1. Identify your OS, Fire2a toolbox plugin, and QGIS versions:
+1. Look for similar issues beforehand
+
+2. Identify your OS, Fire2a toolbox plugin, and QGIS versions:
    - **Operating System:**  
        -- Windows : `press Win key > type About > Windows specifications section : click Copy button`  
        -- MacOS : `Apple > TODO`  
@@ -35,11 +39,81 @@ If the problem persists, follow the next steps to report your issue[here](https:
   ![](img/plugins_version.png){: width="75%" }
    - **QGIS Version:** `Menu :Help > click About` copy at least the first paragraph
   
-2. **Include Relevant Files:**
+3. **Include Relevant Files:**
    - Compress and attach the instance and/or results (make a `.zip` file) you were using when the error occurred.
    - If not already in results, attach the corresponding `algorithmName_log.html` file (`Menu : View > Panels > Log Messages > fire2a`)
   
 Clear and concise descriptions are paramount when submitting a bug report. Please focus on **details about the issue encountered, including your goal and the unexpected behavior you experienced.** Then, provide the **steps to reproduce the issue. Include any error messages or other relevant observations you encountered.**
+
+
+# <img src="/docs/assets/qgis-favicon.ico"  alt='icon-missing' style="height: 18px"> Plugin Management
+
+There are 3 ways of installing plugins, the recommended (using a our custom repo source) takes care of prompting the user in QGIS's message bar for updates. "Install from ZIP" is for testers looking for beta versions, and "placing a directory" is for developers symlinking their repo.
+
+## Install fire2a toolbox
+(check explainer gif after for steps 3 and 4)
+1. Install QGIS for [Linux🗽](#linux-), [MacOS](#macos-) or [Windows](#windows-) *(don't open it yet!)*
+2. Install python dependencies for [Linux🗽](#python), [MacOS](#python-1), [Windows](#python-2) ... or [last resort](forcing-python-requirements.html)
+4. Add fire2a's plugin repo/store [URL][toolbox-server] to custom plugin sources *(open here!)*   
+* [tutorial][custom] 
+* `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Settings' > Plugin Repositories 'Add' > fill Name & paste URL > Ok`  
+![](img/tldr_add_plugin_source.png){: width="55%" }
+<a name="anchor">
+![](img/install_plugin_server.gif){: width="75%" }
+</a>
+* Note: removing the repo server does not uninstall its plugins
+
+4. Do a regular new plugin installation 
+* [tutorial][new plugin]
+* `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Not installed' > search box 'fire' > select > 'Install Plugin' > 'Ok'`
+* Note: *At the time of writing the `Plugin Dependencies Manager` wait wheel spins forever, press `Ok` rightaway; you already installed them in step 2*
+* If it doesn't appear right away on the Processing Toolbox panel:  
+&nbsp;A. toggle the checkbox next to its name in the `Installed` section of the `Plugin Manager`  
+&nbsp;B. restart QGIS  
+![](img/tldr_install_plugin.png){: width="55%" }
+![](img/install_fire2a_toolbox.gif){: width="95%" }
+
+<a href="#top">back to top</a>
+
+## Other options
+### Install from ZIP
+1. Browse to:
+* [releases](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/releases)
+* [latest release](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/releases/latest)
+2. Download a release from a tag section, in the Assets part, it looks like `fireanalyticstoolbox_v1818.5.5-beta.zip`
+3. `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Install from ZIP' > '...' > 'Install Plugin'` (also dropping the zip into the input works)
+
+### Place a folder
+Download & unzip a release from the repo [toolbox-releases] or sample [release](https://github.com/fdobad/qgis-processingplugin-template/releases) sections.
+
+For example, unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plugin` must be moved to: 
+```
+# linux (symbolic link it!)
+~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
+# macos
+~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
+# windows
+%APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\example_plugin
+```
+
+## Must have plugins!
+
+<img src="https://plugins.qgis.org/media/cache/be/d4/bed435e6a44e6d32cebb7e3af2f584ce.png"  alt='icon-missing' style="height: 16px">
+: [Save All](https://plugins.qgis.org/plugins/SaveAllScript/), choose a location, name a new directory, done! everything gets written to disk, never worry again about temp folders or in memory layers!
+
+<img src="https://plugins.qgis.org/media/cache/ee/38/ee380afa16e4be33e53defd07b8d6ccc.png"  alt='icon-missing' style="height: 16px">
+: [Serval](https://plugins.qgis.org/plugins/Serval/), Modify your rasters as if you were using paint!
+
+<img src="https://plugins.qgis.org/media/cache/b1/4b/b14beb4a67135e9ebf4cbdfbc2a206dc.png"  alt='icon-missing' style="height: 16px">
+: [IPyConsole](https://plugins.qgis.org/plugins/IPyConsole/), "No offense, but QGIS python console just sucks." ([sic](https://www.itopen.it/qgis-and-ipython-the-definitive-interactive-console/#comment-140751)) [documentation](http://www.itopen.it/qgis-and-ipython-the-definitive-interactive-console/), [fix to use latest qtconsole](https://github.com/elpaso/qgis-ipythonconsole/compare/master...fdobad:qgis-ipythonconsole:master)
+
+<img src="https://plugins.qgis.org/media/cache/0f/ac/0faca0282837983e3b2cad151c05844e.png"  alt='icon-missing' style="height: 16px">
+: [Plugin Reloader](https://plugins.qgis.org/plugins/plugin_reloader/), If a plugin starts misbehaving easier to reload it than to restart QGIS
+
+<img src="https://plugins.qgis.org/media/cache/e5/09/e5090f072bef93fb4344067026148210.png"  alt='icon-missing' style="height: 16px">
+: [Plugin Builder](https://plugins.qgis.org/plugins/pluginbuilder3), Jumpstart your plugin development!
+
+<a href="#top">back to top</a>
 
 # Linux 🗽
 ## QGIS install
@@ -125,6 +199,7 @@ cp /usr/share/applications/org.qgis.qgis.desktop ~/.local/share/applications/.
 # processing plugin directory
 /usr/share/qgis/python/plugins/processing
 ```
+
 <a href="#top">back to top</a>
 
 # MacOS 💰
@@ -158,6 +233,7 @@ This QGIS version includes its own python, so be careful to use it instead of sy
 # python location
 /Applications/QGIS.app/Contents/MacOS/bin
 ```
+
 <a href="#top">back to top</a>
 
 # Windows 💩™
@@ -222,51 +298,6 @@ Recommended for machines with a single user, or to share modifications to the en
 
 Also on the gif, a success install of qtconsole being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path, meaning success in making the python environment writable
 
-# Plugin Management
-There are 3 ways of installing plugins, the recommended (using a our custom repo source) takes care of prompting the user in QGIS's message bar for updates. "Install from ZIP" is for testers looking for beta versions, and "placing a directory" is for developers symlinking their repo.
-## Install fire2a toolbox
-(check explainer gif after for steps 3 and 4)
-1. Install QGIS for [Linux🗽](#linux-), [MacOS](#macos-) or [Windows](#windows-)
-2. Install python dependencies for [Linux🗽](#python), [MacOS](#python-1), [Windows](#python-2) ... or [last resort](forcing-python-requirements.html)
-3. Add fire2a's plugin repo/store [URL][toolbox-server] to custom plugin sources   
-* [tutorial][custom] 
-* `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Settings' > Plugin Repositories 'Add' > fill Name & paste URL > Ok`  
-![](img/tldr_add_plugin_source.png){: width="55%" }
-<a name="anchor">
-![](img/install_plugin_server.gif){: width="75%" }
-</a>
-* Note: removing the repo server does not uninstall its plugins
-
-4. Do a regular new plugin installation 
-* [tutorial][new plugin]
-* `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Not installed' > search box 'fire' > select > 'Install Plugin' > 'Ok'`
-* Note: *At the time of writing the `Plugin Dependencies Manager` wait wheel spins forever, press `Ok` rightaway; you already installed them in step 2*
-* If it doesn't appear right away on the Processing Toolbox panel:  
-&nbsp;A. toggle the checkbox next to its name in the `Installed` section of the `Plugin Manager`  
-&nbsp;B. restart QGIS  
-![](img/tldr_install_plugin.png){: width="55%" }
-![](img/install_fire2a_toolbox.gif){: width="95%" }
-
-## Other options
-### Install from ZIP
-1. Browse to:
-* [releases](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/releases)
-* [latest release](https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/releases/latest)
-2. Download a release from a tag section, in the Assets part, it looks like `fireanalyticstoolbox_v1818.5.5-beta.zip`
-3. `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Install from ZIP' > '...' > 'Install Plugin'` (also dropping the zip into the input works)
-
-### Place a folder
-Download & unzip a release from the repo [toolbox-releases] or sample [release](https://github.com/fdobad/qgis-processingplugin-template/releases) sections.
-
-For example, unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_plugin` must be moved to: 
-```
-# linux (symbolic link it!)
-~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
-# macos
-~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/example_plugin
-# windows
-%APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\example_plugin
-```
 ---
 [QGIS]: https://qgis.org
 [requirements.txt]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/requirements.txt 

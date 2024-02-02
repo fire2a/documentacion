@@ -43,7 +43,7 @@ Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless 
     - Python [dependencies][requirements.txt] must be manually resolved  
     - fire2a's plugin repo/store [link][toolbox-server] must be added as a custom plugin source (*)  
 
-**Done!** *fire2a-toolbox icon <img src="/assets/bonfire.png"  style="height: 16px"> will <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px"> appear on the algorithms list of the Processing Toolbox Panel*
+**Done!** *fire2a-toolbox icon <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px"> will appear on the algorithms list of the Processing Toolbox Panel*
 
 
 (*) : Because it contains compiled c++ binary code -for Cell2Fire simulator, but binary code cannot be easily verified hence the plugin is not allowed on the [regular repo/store](https://plugins.qgis.org/). Nevertheless all our code is open source, its build is "reproducible" by an automated action; all can be audited on [fire2a@github](https://github.com/fire2a)
@@ -61,12 +61,43 @@ Getting or generating a fuel model raster can be challenging (tutorial coming so
 
 Step 2 can be skipped but is more cumbersome to select each layer from a file explorer than to use the dropdown to select between current loaded layers; Also `Weather.csv` is automatically selected.
 
-# Current deployed algorithms
-1. Cell2Fire Simulator
-2. Simulator Post Processing
-3. Risk Metrics Calculator
-4. Instances Downloader
-5. [Raster knapsack optimization](./algo_knapsack.html)
+# Deployed algorithms
+
+**Fire Analytics Toolbox** <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px">
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/forestfire.svg"  alt='icon-missing' style="height: 16px">
+: [(Cell2)Fire Simulator](./algo_simulator.html)
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/downloader.svg"  alt='icon-missing' style="height: 16px">
+: (Simulator) Instances Downloader
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: [Raster knapsack optimization](./algo_knapsack.html)
+
+**Simulator Post Processing (simpp)**
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/ignitionpoint.svg"  alt='icon-missing' style="height: 16px">
+: Ignition Point(s)
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bodyscar.svg"  alt='icon-missing' style="height: 16px">
+: Fire Scar(s) polygons + burn probability map raster (>1 sims)
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/burntime.svg"  alt='icon-missing' style="height: 16px">
+: Propagation Digraph arrows
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/fireface.svg"  alt='icon-missing' style="height: 16px">
+: Spatial Statistics for any of: Hit Rate Of Spread, Flame Length, Byram Fire Line Intensity, Crown Fire Scar, Crown Fire Fuel Consumption Ratio, Surface Burn Fraction
+
+**simpp Risk Metrics**
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/dpv.svg"  alt='icon-missing' style="height: 16px">
+: DownStream Protection Value
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bc.svg"  alt='icon-missing' style="height: 16px">
+: Betweenness Centrality
+
+
+
 
 ---
 [QGIS]: https://qgis.org
