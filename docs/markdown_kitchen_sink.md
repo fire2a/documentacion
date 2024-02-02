@@ -95,6 +95,51 @@ even when it comes at the beginning](.) of the line.
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
+### html table
+
+<table>
+<tr>
+<th> Header left </th>
+<th> Header right </th>
+</tr>
+<tr>
+<td>
+
+Content 1,1
+
+</td>
+<td>
+
+Content 1,2
+
+</td>
+</tr>
+<tr>
+<td>
+
+Content 2,1
+
+</td>
+<td>
+
+Content 2,2
+
+</td>
+</tr>
+<tr>
+<td>
+
+Content 3,1
+
+</td>
+<td>
+
+Content 3,2
+
+</td>
+</tr>
+</table>
+
 ### There's a horizontal rule below this.
 
 * * *

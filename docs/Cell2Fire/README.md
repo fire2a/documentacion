@@ -91,7 +91,7 @@ ln -s C2F-W fire-toolbox/fireanalyticstoolbox/simulator/C2F
 cd ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
 ln -s ~/source/fire-toolbox/fireanalyticstoolbox .
 ```
-Next time you start QGIS, look for fire2a-toolbox icon <img src="/docs/assets/bonfire.png"  style="height: 16px">, on the Processing Toolbox panel.
+Next time you start QGIS, look for fire2a-toolbox icon <img src="/assets/bonfire.png"  style="height: 16px">, on the Processing Toolbox panel.
 
 ## Linux
 [Make](compile_linux.html)
