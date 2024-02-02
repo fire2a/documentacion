@@ -80,13 +80,13 @@ Step 2 can be skipped but is more cumbersome to select each layer from a file ex
 : Ignition Point(s)
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bodyscar.svg"  alt='icon-missing' style="height: 16px">
-: Fire Scar(s) polygons + burn probability map raster (>1 sims)
+: (Propagation) Fire Scar(s)
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/burntime.svg"  alt='icon-missing' style="height: 16px">
-: Propagation Digraph arrows
+: Propagation Digraph
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/fireface.svg"  alt='icon-missing' style="height: 16px">
-: Spatial Statistics for any of: Hit Rate Of Spread, Flame Length, Byram Fire Line Intensity, Crown Fire Scar, Crown Fire Fuel Consumption Ratio, Surface Burn Fraction
+: Spatial Statistics, any of: Hit Rate Of Spread, Flame Length, Byram Fire Line Intensity, Crown Fire Scar, Crown Fire Fuel Consumption Ratio, Surface Burn Fraction
 
 **simpp Risk Metrics**
 
@@ -95,6 +95,9 @@ Step 2 can be skipped but is more cumbersome to select each layer from a file ex
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bc.svg"  alt='icon-missing' style="height: 16px">
 : Betweenness Centrality
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bodyscar.svg"  alt='icon-missing' style="height: 16px">
+: Burn Probability
 
 
 

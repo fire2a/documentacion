@@ -45,6 +45,8 @@ If the problem persists, follow the next steps to create an issue [here](https:/
   
 Clear and concise descriptions are paramount when submitting a bug report. Please focus on **details about the issue encountered, including your goal and the unexpected behavior you experienced.** Then, provide the **steps to reproduce the issue. Include any error messages or other relevant observations you encountered.**
 
+<a href="#top">back to top</a>
+{: style="text-align: right;"}
 
 # <img src="/docs/assets/qgis-favicon.ico"  alt='icon-missing' style="height: 18px"> Plugin Management
 
@@ -74,6 +76,7 @@ There are 3 ways of installing plugins, the recommended (using a our custom repo
 ![](img/install_fire2a_toolbox.gif){: width="95%" }
 
 <a href="#top">back to top</a>
+{: style="text-align: right;"}
 
 ## Other options
 ### Install from ZIP
@@ -96,6 +99,9 @@ For example, unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_
 %APPDATA%\QGIS\QGIS3\profiles\default\python\plugins\example_plugin
 ```
 
+<a href="#top">back to top</a>
+{: style="text-align: right;"}
+
 ## Must have plugins!
 
 <img src="https://plugins.qgis.org/media/cache/be/d4/bed435e6a44e6d32cebb7e3af2f584ce.png"  alt='icon-missing' style="height: 16px">
@@ -114,6 +120,7 @@ For example, unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_
 : [Plugin Builder](https://plugins.qgis.org/plugins/pluginbuilder3), Jumpstart your plugin development!
 
 <a href="#top">back to top</a>
+{: style="text-align: right;"}
 
 # Linux 🗽
 ## QGIS install
@@ -201,6 +208,7 @@ cp /usr/share/applications/org.qgis.qgis.desktop ~/.local/share/applications/.
 ```
 
 <a href="#top">back to top</a>
+{: style="text-align: right;"}
 
 # MacOS 💰
 ## QGIS Install
@@ -235,6 +243,7 @@ This QGIS version includes its own python, so be careful to use it instead of sy
 ```
 
 <a href="#top">back to top</a>
+{: style="text-align: right;"}
 
 # Windows 💩™
 ## QGIS Install
@@ -258,6 +267,9 @@ Windows version of QGIS comes bundled with its own python, a special launcher mu
 3. Type `pip install -r "%USERPROFILE%\Downloads\requirements.txt"` press Enter. (Adjust the path as needed, on Windows 11 you can select the file with the secondary button then click 'Copy path', use 2ndary click to paste into CMD terminal)
 
 ![](img/install_win_pip_requirements.gif){: width="75%" }
+
+<a href="#top">back to top</a>
+{: style="text-align: right;"}
 
 ### making a python environment launcher
 

@@ -5,6 +5,11 @@ layout: default
 # nav_order: 99
 ---
 # Markdown kitchen sink
+
+## references
+<https://www.hansenh.com/post/jekyll-formatting-cheatsheet>
+<https://cloudcannon.com/cheat-sheets/jekyll/>
+
 <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
 <script>
@@ -34,6 +39,8 @@ This is a callout
 This is a callout
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
+
+Colored <a style="color:#e815ee;">in line</a> text
 
 [Link to another page](another-page).
 

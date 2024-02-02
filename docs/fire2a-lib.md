@@ -39,6 +39,57 @@ In [1]: from fire2a.<press-tab-to-continue>
 Algo check the [qgis-cookbook] and [Repository] guides.
 [tl;dr developer here](/docs/Cell2Fire/README.html#unix-overview)
 
+## Developer guide
+A tree of principal components:
+```bash
+~
+├── C2F-W
+│   ├── Cell2FireC
+│   │   ├── Cell2Fire
+│   │   ├── Cell2Fire.exe
+│   │   ├── Cell2Fire.Linux.x86_64
+│   │   ├── Cell2Fire.Darwin.arm64
+│   │   ├── cell2fire.py
+│   │   └── DataGeneratorC.py
+│   └── data
+│       ├── CanadianFBP
+│       ├── Kitral
+│       └── ScottAndBurgan
+├── fire2a-lib
+│   ├── pyproject.toml
+│   ├── requirements.dev.txt
+│   ├── requirements.doc.txt
+│   ├── requirements.txt
+│   ├── src
+│   │   ├── fire2a
+│   │   │   ├── __init__.py
+│   │   │   ├── raster.py
+│   │   │   └── utils.py
+│   │   └── fire2a-tutorials
+│   │       ├── __init__.py
+│   │       └── template.py
+│   └── tests
+│       ├── assets
+│       └── test_utils.py
+└── fire-toolbox
+    └── fireanalyticstoolbox
+        ├── metadata.txt
+        ├── __init__.py
+        ├── fireanalyticstoolbox.py
+        ├── fireanalyticstoolbox_provider.py
+        ├── fireanalyticstoolbox_algorithm.py
+        ├── requirements.txt
+        └── simulator
+            ├── C2F -> ~/C2F-W
+            ├── c2fqprocess.py
+            ├── fuel_0_layerStyle.qml
+            ├── fuel_1_layerStyle.qml
+            ├── fuel_2_layerStyle.qml
+            ├── kitral_lookup_table.csv
+            ├── fbp_lookup_table.csv
+            └── spain_lookup_table.csv
+```
+
 ---
 [QGIS]: https://qgis.org
 [Repository]: https://github.com/fire2a/fire2a-lib/

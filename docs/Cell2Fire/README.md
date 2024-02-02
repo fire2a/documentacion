@@ -30,7 +30,6 @@ Released flavors (*no longer maintained*):
 
 The [OG](https://github.com/cell2fire/Cell2Fire/)
 
-
 # Output examples
 
 ## Scott & Burgan
@@ -47,7 +46,8 @@ The [OG](https://github.com/cell2fire/Cell2Fire/)
 
 |:-------------|:------------------|
 | Dogrib forest, Canada ![](img/c2fFBP-Example4.png){: width="100%" } | shortest paths propagation ![](img/c2fFBP-Example1.png){: width="80%" } |
-| Shortest paths propagation and ROS intensity ![](img/gc/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](img/c2fFBP-Example3.png){: width="80%" } |
+| Shortest paths propagation and ROS intensity ![](img/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](img/c2fFBP-Example3.png){: width="80%" } |
+
 
 # Compiling
 Releases are bundled with pre-compiled binaries, normal users probably don't need this guide.
@@ -91,7 +91,7 @@ ln -s C2F-W fire-toolbox/fireanalyticstoolbox/simulator/C2F
 cd ~/.local/share/QGIS/QGIS3/profiles/default/python/plugins
 ln -s ~/source/fire-toolbox/fireanalyticstoolbox .
 ```
-Next time you start QGIS, look for fire2a-toolbox icon <img src="/assets/bonfire.png"  style="height: 16px">, on the Processing Toolbox panel.
+Next time you start QGIS, look for fire2a-toolbox icon <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px">, on the Processing Toolbox panel.
 
 ## Linux
 [Make](compile_linux.html)
