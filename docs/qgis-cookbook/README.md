@@ -48,7 +48,7 @@ Clear and concise descriptions are paramount when submitting a bug report. Pleas
 <a href="#top">back to top</a>
 {: style="text-align: right;"}
 
-# <img src="/docs/assets/qgis-favicon.ico"  alt='icon-missing' style="height: 18px"> Plugin Management
+# <img src="../assets/qgis-favicon.ico"  alt='icon-missing' style="height: 18px"> Plugin Management
 
 There are 3 ways of installing plugins, the recommended (using a our custom repo source) takes care of prompting the user in QGIS's message bar for updates. "Install from ZIP" is for testers looking for beta versions, and "placing a directory" is for developers symlinking their repo.
 

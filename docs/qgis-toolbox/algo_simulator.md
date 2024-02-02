@@ -5,7 +5,6 @@ nav_order: 1
 has_children: false
 has_toc : false
 parent: QGIS Fire Analytics Toolbox
-number_sections: true
 ---
 
 {: .no_toc}
