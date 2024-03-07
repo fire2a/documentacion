@@ -37,7 +37,7 @@ Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless 
 5. **Python script**, working *both* [calling it] from the QGIS [python console] *or* as [standalone code]
 
 # Installing
-[Full guide here](/docs/qgis-cookbook/README.html) or overview:
+[Full guide here](/docs/docs/qgis-cookbook/README.html) or overview:
 1. [QGIS] version > 3.28.12 (LTR version is mostly compatible but misses, for example, grouping simulation results; latest version is recommended)
 2. fire2a-toolbox installation can *almost* be done straight forward from QGIS **[plugin manager]** *but*:
     - Python [dependencies][requirements.txt] must be manually resolved  
@@ -49,7 +49,7 @@ Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless 
 (*) : Because it contains compiled c++ binary code -for Cell2Fire simulator, but binary code cannot be easily verified hence the plugin is not allowed on the [regular repo/store](https://plugins.qgis.org/). Nevertheless all our code is open source, its build is "reproducible" by an automated action; all can be audited on [fire2a@github](https://github.com/fire2a)
 
 * **Testers** should instead install by `.zip` file from fire2a-toolbox [releases][toolbox-releases]
-* **Developers** should clone our repos ([toolbox-repo], [c2f-repo], [fire2a-lib-repo]), compile cell2fire, symlink and setup additional python dependencies to contribute ([tl;dr](/docs/Cell2Fire/README.html#unix-overview))
+* **Developers** should clone our repos ([toolbox-repo], [c2f-repo], [fire2a-lib-repo]), compile cell2fire, symlink and setup additional python dependencies to contribute ([tl;dr](/docs/docs/Cell2Fire/README.html#unix-overview))
 
 # First test run
 Getting or generating a fuel model raster can be challenging (tutorial coming soon), so the simplest way is to:
