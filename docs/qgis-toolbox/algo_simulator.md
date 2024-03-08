@@ -115,6 +115,18 @@ This section has three main parts: options, advanced and destination directories
 * When simulating **one or few simulations**, a detailed output is relevant (like **propagation digraph and propagation scars**)
 * When simulating **hundreds or thousands**, mean and std.dev. statistics are more important than detailed output that can choke the computer unnecessarily (use **final scar** instead of propagation scars; propagation digraph is input for DPV and Centrality measures; but it can't be loaded into view!)
 
+| output name  | unit-type | description |
+|:-------------|:------------------|:------|
+| Final Fire Scars | raster `0,1` |  |
+| Propagation Directed Graph | vector lines `periods` | edges labeled with simulation event time |
+| Hit Rate Of Spread | raster float32 `m/m` | multiband x simulation and bi-band mean&std |
+| Propagation Fire Scars | polygons | _animate adding the column_ `=now()+ make_interval(hours:=time)` |
+| Flame Length| raster float32 `m` | multiband x simulation and bi-band mean&std |
+| Byram Fireline Intensity | raster float32 `kW/m` | multiband x simulation and bi-band mean&std |
+| Crown Fire Scar | raster `0,1` | multiband x simulation and bi-band mean&std |
+| Crown Fire Fuel Consumption Ratio raster | `0,1` | multiband x simulation and bi-band mean&std |
+| Surface Burn Fraction raster | `0,1` | multiband x simulation and bi-band mean&std |
+
 <a href="#top">back to top</a>
 {: style="text-align: right;"}
 
