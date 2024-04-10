@@ -119,7 +119,7 @@ Step 2 can be skipped but is more cumbersome to select each layer from a file ex
 [toolbox]: https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html
 [form dialog]: https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html#the-algorithm-dialog
 [Batch of forms]: https://docs.qgis.org/latest/en/docs/user_manual/processing/batch.html#processing-batch
-[cli wrapper]: https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone
+[cli wrapper]: https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone.html
 [python console]: https://docs.qgis.org/latest/en/docs/user_manual/plugins/python_console.html#console
 [calling it]: https://docs.qgis.org/latest/en/docs/user_manual/processing/console.html
 [standalone code]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/script_samples/standalone.py
