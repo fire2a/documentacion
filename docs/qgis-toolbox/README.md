@@ -75,10 +75,26 @@ Note: Step 2 can be skipped but it is cumbersome to select each layer from file 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/downloader.svg"  alt='icon-missing' style="height: 16px">
 : (Simulator) Instances Downloader
 
+**Decision optimization**
+
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
 : [Raster knapsack optimization](./algo_knapsack.html)
 
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Polygon knapsack optimization : Optimizes the classical knapsack problem using polygons with values and/or weights attributes, returns a polygon layer with the selected polygons.
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Polygon treatment optimization : Using possible treatments for each polygon, Maximize the changed value of the treated polygons
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Raster treatment optimization : Maximize the changed value of the treated raster, deciding which treatment to apply to each pixel (or no change), subject to budget and area constraints
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Raster treatment & teams optimization : Maximize the changed value of the treated raster, deciding which treatment to apply by which team to each pixel (or no change), subject to budget, area constraints and team capabilities
+
 **Simulator Post Processing (simpp)**
+
+Bundle: all post processing combined for convenience
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/ignitionpoint.svg"  alt='icon-missing' style="height: 16px">
 : Ignition Point(s)
@@ -103,7 +119,9 @@ Note: Step 2 can be skipped but it is cumbersome to select each layer from file 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bodyscar.svg"  alt='icon-missing' style="height: 16px">
 : Burn Probability
 
+**Auxiliary**
 
+Match AII Grid Rasters : Simplifies using gdal translate thrice, to clip extent, then resize and replace geotransform to match an ascii raster into another
 
 
 ---
