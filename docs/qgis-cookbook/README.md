@@ -270,6 +270,8 @@ Windows version of QGIS comes bundled with its own python, a special launcher mu
 
 If you couldn't understand last 2 steps, try the [last resort](forcing-python-requirements.html) solution.
 
+All ready!
+
 <a href="#top">back to top</a>
 {: style="text-align: right;"}
 
