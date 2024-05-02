@@ -54,9 +54,12 @@ There are 3 ways of installing plugins, the recommended (using a our custom repo
 
 ## Install fire2a toolbox
 (check explainer gif after for steps 3 and 4)
-1. Install QGIS for [Linux🗽](#linux-), [MacOS](#macos-) or [Windows](#windows-) *(don't open it yet!)*
+1. Install QGIS for [Linux🗽](#linux-), [MacOS](#macos-) or [Windows](#windows-)  
+_English language version is more reliable_  
+__Don't open it yet!__  
+_Decision Optimization algorithm users __beware__: At the moment (May 1st 2024, and for the last year), IBM has not released a python >3.10 compatible version. So QGIS<=3.36.0 is required for using CPLEX (CBC is included and works fine except for large rasters)_  
 2. Install python dependencies for [Linux🗽](#python), [MacOS](#python-1), [Windows](#python-2) ... or [last resort](forcing-python-requirements.html)
-4. Add fire2a's plugin repo/store [URL][toolbox-server] to custom plugin sources *(open here!)*   
+3. Add fire2a's plugin repo/store [URL][toolbox-server] to custom plugin sources *(open here!)*   
 * [tutorial][custom] 
 * `Menu: 'Plugins' > 'Manage and Install Plugins...' > 'Settings' > Plugin Repositories 'Add' > fill Name & paste URL > Ok`  
 ![](img/tldr_add_plugin_source.png){: width="55%" }
@@ -270,12 +273,43 @@ Windows version of QGIS comes bundled with its own python, a special launcher mu
 
 If you couldn't understand last 2 steps, try the [last resort](forcing-python-requirements.html) solution.
 
-All ready!
+__All ready!__
+
+__Except__ if you'll be running our _Decision Optimization algorithms, specially on big rasters_; then the next two steps are required to use CPLEX as a MIP solver from within QGIS.
 
 <a href="#top">back to top</a>
 {: style="text-align: right;"}
 
-### making a python environment launcher
+### make it writable
+Recommended for machines with a single user, or to share modifications to the environment to all users (explainer gif after)
+
+Also to integrate a local cplex install with QGIS python environment (see our decision optimization algorithms)
+
+1. Open QGIS install folder, open the `bin` folder
+    - probably: `C:\Program Files\QGIS 3.45.6\bin` (adjust version)
+    - surely: `Win button > type QGIS > 2ndary click > Open file location > 2ndary click > Open file location > click 'bin' folder`
+2. Select `Python39` (check same version), properties, security, ... full control for user.
+
+![](img/qgis_windows_single_user.gif){: width="75%" }
+
+Also on the gif, a success install of qtconsole being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path, meaning success in making the python environment writable
+
+### setup CPLEX solver 
+
+__At the moment (May 1st 2024, and for the last year), IBM has not released a python >3.10 compatible version. So QGIS<=3.36.0 is required.__  
+
+0. Make your QGIS python environment writable by users (see previous section)
+1. Download and install the CPLEX solver from IBM's website (tested with CPLEX_Studio2211)
+2. Open OSGeo4W Shell
+3. Execute changing directory to the CPLEX install location, python folder, then run setup.py with the install argument:
+```batch
+cd ..\IBM\ILOG\CPLEX_Studio2211\python
+python setup.py install
+```
+Now you can just select CPLEX on any decision [optimization](/docs/docs/qgis-toolbox/README.html#deployed-algorithms) algorithm (advanced parameters section, on the dropdown form)
+![](img/doop_advancedoptions.png){: width="75%" }
+
+### making a python environment launcher for developers
 
 To have a location independent launcher that activates the environment in a CMD terminal; 
 - for running python scripts using QGIS without the application raised
@@ -291,7 +325,7 @@ Copy and modify `python-qgis.bat` that comes in QGIS `bin` folder, in these 3 st
 ```batch
     REM call it from an absolute path
     REM adjust location and version
-    call "%PROGRAMFILES%\QGIS 3.45.6\bin\o4w_env.bat"
+    call "%PROGRAMFILES%\QGIS 3.45.6\bin\o4w_env.bat"  (adjust version)
 
     REM print the prefix as check
     echo python sys says:
@@ -301,31 +335,6 @@ Copy and modify `python-qgis.bat` that comes in QGIS `bin` folder, in these 3 st
 ```
 
 ![](img/qgis_windows_activate_venv.gif){: width="75%" }
-
-### make it writable 
-Recommended for machines with a single user, or to share modifications to the environment to all users (explainer gif after)
-Also to integrate a local cplex install with QGIS python environment (see our decision optimization algorithms)
-
-1. Open QGIS install folder, open the `bin` folder
-    - probably: `C:\Program Files\QGIS 3.45.6\bin` (adjust version)
-    - surely: `Win button > type QGIS > 2ndary click > Open file location > 2ndary click > Open file location > click 'bin' folder`
-2. Select `Python39` (check same version), properties, security, ... full control for user.
-
-![](img/qgis_windows_single_user.gif){: width="75%" }
-
-Also on the gif, a success install of qtconsole being installed on `Program Files\Qgis` and not on user's `%APPDATA%` path, meaning success in making the python environment writable
-
-### setup CPLEX solver 
-0. Make your QGIS python environment writable by users (see previous section)
-1. Download and install the CPLEX solver from IBM's website (tested with CPLEX_Studio2211)
-2. Open OSGeo4W Shell
-3. Execute changing directory to the CPLEX install location, python folder, then run setup.py with the install argument:
-```batch
-cd ..\IBM\ILOG\CPLEX_Studio2211\python
-python setup.py install
-```
-Now you can just select CPLEX on any decision [optimization](/docs/docs/qgis-toolbox/README.html#deployed-algorithms) algorithm (advanced parameters section, on the dropdown form)
-![](img/doop_advancedoptions.png){: width="75%" }
 
 ---
 [QGIS]: https://qgis.org
