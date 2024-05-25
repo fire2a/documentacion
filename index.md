@@ -3,27 +3,27 @@ title: Home
 layout: home
 nav_order: 99
 ---
-Welcome to the Fire2a research group documentation, choose your component:
+Bienvenido a la documentación del grupo de investigación Fire2a, elige tu componente:
 
-[__QGIS Fire Analytics Toolbox__](docs/qgis-toolbox/README.html): Our research as **user friendly graphical tools**: Simulate wildfires, get risk metrics, optimize firebreak location, etc. All from within [QGIS]. **Simple as filling a form**. Also available: drag'n'drop boxes (algorithms) into a *GIS-data-science-pipeline*.
+[__QGIS Fire Analytics Toolbox__](docs/qgis-toolbox/README.html): Nuestra investigación como **herramientas gráficas amigables para el usuario**: Simula incendios forestales, obtén métricas de riesgo, optimiza la ubicación de cortafuegos, etc. Todo desde [QGIS]. **Tan simple como llenar un formulario**. También disponible: arrastrar y soltar cajas (algoritmos) en un *GIS-data-science-pipeline*.
 
-[__Cell2Fire++__](docs/Cell2Fire/README.html): Forest fire simulator ([Forked]) and improved ([Here]). Supports Canada, Kitral, S&B fuel models , surface and crown fire, deals with weather scenarios, surface and vegetation moisture content; various output metrics. Also enhances in memory management, platform support, etc. **C++ only command line interface.**
+[__Cell2Fire++__](docs/Cell2Fire/README.html): Simulador de incendios forestales ([Bifurcado]) y mejorado ([Aquí]). Soporta modelos de combustible Canada, Kitral, S&B, fuego de superficie y de copa, escenarios climáticos, contenido de humedad de superficie y vegetación; varios métricas de salida. También mejoras en gestión de memoria, soporte multi-plataformas, etc. **Interfaz de línea de comandos solo en C++**.
 
-[__Algorithms Library__](docs/fire2a-lib.html) of common tasks & patterns of GIS. Also showcasing proof of concepts and special algorithms developed such as landscape clustering, firebreak optimization allocation, downstream protection value, etc. **A python package.**
+[__Librería de Algoritmos__](docs/fire2a-lib.html): Biblioteca de tareas y patrones comunes de GIS. También pruebas de concepto y algoritmos especiales como agrupación de paisajes, optimización de cortafuegos, valor de protección aguas abajo, etc. **Un paquete de python.**
 
-[__QGIS Cookbook__](docs/qgis-cookbook/README.html): Install & setup guides, python environments, plugins and workflows examples.
+[__Recetas de QGIS__](docs/qgis-cookbook/README.html): Guías de instalación y configuración, entornos de python, plugins y ejemplos de flujos de trabajo.
 
-[__QGIS dialog DEPRECATED__](docs/qgis-dialog/README.html): Simulate forest fires, get valuable metrics, in a user friendly graphical interface through [QGIS]. __Not maintained__
+[__Diálogo de QGIS DEPRECATED__](docs/qgis-toolbox/README.html): Simula incendios forestales, obtén métricas de riesgo, optimiza la ubicación de cortafuegos, etc. Todo desde [QGIS]. __No mantenida__
 
-# About us
+# Acerca de nosotros
 
-We are a research group that seeks solutions to complex problems arising from the terrestrial ecosystem and its natural and anthropogenic disturbances, such as wildfires.
+Somos un grupo de investigación que busca soluciones a problemas complejos que surgen del ecosistema terrestre y sus disturbios naturales y antropogénicos, como los incendios forestales.
 
-Currently hosted at [ISCI](https://isci.cl) offices.
+Actualmente alojado en las oficinas de [ISCI](https://isci.cl).
 
-Contact us at <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
+Contáctenos en <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
 
-Visit our public <a href="http://www.fire2a.com">webpage</a>.
+Visite nuestra página web pública <a href="http://www.fire2a.com">aquí</a>.
 
 [{% avatar fire2a %}](https://github.com/fire2a/)
 [{% avatar jaimecarrasco %}](https://github.com/jaimecarrasco/)
@@ -41,12 +41,12 @@ Visit our public <a href="http://www.fire2a.com">webpage</a>.
 ![ci](https://github.com/fire2a/docs/actions/workflows/ci.yml/badge.svg)
 ![pages](https://github.com/fire2a/docs/actions/workflows/pages.yml/badge.svg)
 
-### _About this page_  
-It's all [markdown!](docs/markdown_kitchen_sink.html)  
-[content licence](https://raw.githubusercontent.com/fire2a/docs/main/LICENSE)  
+### _Aceca de esta página_
+Es todo [markdown!](docs/markdown_kitchen_sink.html)  
+[licencia del contenido](https://raw.githubusercontent.com/fire2a/docs/main/LICENSE)  
 [just-the-docs-licence](https://raw.githubusercontent.com/fire2a/docs/main/just-the-docs-LICENSE)
 
 ---
 [QGIS]: https://qgis.org
-[Forked]: https://github.com/cell2fire/Cell2Fire/
-[Here]: https://github.com/fire2a/C2F-W/
+[Bifurcado]: https://github.com/cell2fire/Cell2Fire/
+[Aquí]: https://github.com/fire2a/C2F-W/
