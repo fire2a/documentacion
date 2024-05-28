@@ -300,7 +300,7 @@ __At the moment (May 1st 2024, and for the last year), IBM has not released a py
 
 0. Make your QGIS python environment writable by users (see previous section)
 1. Download and install the CPLEX solver from IBM's website (tested with CPLEX_Studio2211)
-2. Open OSGeo4W Shell
+2. Open OSGeo4W Shell as administrator
 3. Execute changing directory to the CPLEX install location, python folder, then run setup.py with the install argument:
 ```batch
 cd ..\IBM\ILOG\CPLEX_Studio2211\python
