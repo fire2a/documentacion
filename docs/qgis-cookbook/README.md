@@ -122,6 +122,13 @@ For example, unzip `example_plugin_v1.2.3.zip`, inside, a folder named `example_
 <a href="#top">back to top</a>
 {: style="text-align: right;"}
 
+## Install/Update troubleshoot
+Sometimes after an update, the plugin doesn't appear on the Processing Toolbox panel: Reload it by pressing on the checkbox next to its name in the `Installed` section of the `Plugin Manager` or restart QGIS.
+
+![](img/checkbox_refresh_reloads_plugin.gif){: width="85%" }
+<a href="#top">back to top</a>
+{: style="text-align: right;"}
+
 # Linux 🗽
 ## QGIS install
 * On Debian getting the Long Term Release is easy as: 
