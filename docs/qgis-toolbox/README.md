@@ -61,6 +61,8 @@ Getting or generating a fuel model raster can be challenging (tutorial coming so
 
 Step 2 can be skipped but is more cumbersome to select each layer from a file explorer than to use the dropdown to select between current loaded layers; Also `Weather.csv` is automatically selected.
 
+![](img/algo_sim-first_run.gif){: width="95%" }
+
 # Deployed algorithms
 
 **Fire Analytics Toolbox** <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px">
