@@ -11,63 +11,63 @@ Fire Analytics Toolbox
 {: .no_toc}
 <details closed markdown="block">
   <summary>
-    Table of contents
+    Tabla de contenidos
   </summary>
   {: .text-delta }
 1. TOC
 {:toc}
 </details>
-# Overview
-Our applied fire research as **user friendly graphical GIS tools**:
-- *Simulate* large scale wildfires using Cell2Fire++
-- Get threat and risk *metrics*
-- Use the firebreak location *decision support system*
-- *Combine* our algorithms with any other [QGIS] algorithms easily
+# Resumen
+Nuestra investigación aplicada en incendios como **herramientas gráficas GIS amigables para el usuario**:
+- *Simula* incendios forestales a gran escala usando Cell2Fire++
+- Obtén *métricas* de amenaza y riesgo
+- Usa el *sistema de soporte a la decisión* de ubicación de cortafuegos
+- *Combina* nuestros algoritmos con cualquier otro [QGIS] fácilmente
 
-Without leaving the graphical environment of [QGIS], just by installing our **processing algorithm plugin** *fire2a-toolbox*.
+Sin salir del entorno gráfico de [QGIS], solo instalando nuestro **plugin de algoritmos de procesamiento** *fire2a-toolbox*.
 
-This type of plugins differ from the regular plugins -by being much more than a pop-up dialog- because they follow a data-science-pipeline architecture. 
-Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless integration with all other provided algorithms in the [toolbox], providing 5 ways of being run.
+Este tipo de plugins difiere de los plugins regulares -al ser mucho más que un cuadro de diálogo emergente- porque siguen una arquitectura de *pipeline de ciencia de datos*.
+Delimita claramente: entradas, salidas, algoritmos y contextos; logrando una integración perfecta con todos los algoritmos proporcionados en la [caja de herramientas], proporcionando 5 formas de ser ejecutado.
 
-# Usage alternatives
-1. Simple as *filling a **[form dialog]*** (checkboxes, dropdowns, file-choosers, etc.); with the minimal inputs being a fuel raster and a weather scenario. 
-2. **[Batch of forms]**: Execute sequential runs configuring them in data-sheet-style where each row is one (column-wise displayed) form, *easily experiment parameter sensitivities*.
-3. As part of a **[graphical model] workflow**: Drag and drop boxes of parameters and algorithms, conect arrows as input-ouputs between them, into a [custom] *GIS-data-science-pipeline*.
-4. From a **command line tool**, run `qgis_process` [cli wrapper] to call any processing algorithm *without QGIS graphical overhead*.
-5. **Python script**, working *both* [calling it] from the QGIS [python console] *or* as [standalone code]
+# Alternativas de uso
+1. Tan simple como *llenar un **[cuadro de diálogo]*** (casillas de verificación, menús desplegables, selección de archivos, etc.); siendo las entradas mínimas un ráster de combustible y un escenario climático.
+2. **[Lote de formularios]**: Ejecuta ejecuciones secuenciales configurándolas en estilo de hoja de datos donde cada fila es un formulario (mostrado en columnas), *experimenta fácilmente sensibilidades de parámetros*.
+3. Como parte de un **[flujo de trabajo de modelo] gráfico**: Arrastra y suelta cajas de parámetros y algoritmos, conecta flechas como entradas-salidas entre ellos, en un [personalizado] *GIS-data-science-pipeline*.
+4. Desde una **herramienta de línea de comandos**, ejecuta `qgis_process` [envoltura cli] para llamar a cualquier algoritmo de procesamiento *sin sobrecarga gráfica de QGIS*.
+5. **Script de Python**, trabajando *tanto* [llamándolo] desde la [consola de python] de QGIS *o* como [código independiente]
 
-# Installing
-[Full guide here](/docs/docs/qgis-cookbook/README.html) or overview:
-1. [QGIS] version > 3.28.12 (LTR version is mostly compatible but misses, for example, grouping simulation results; latest version is recommended)
-2. fire2a-toolbox installation can *almost* be done straight forward from QGIS **[plugin manager]** *but*:
-    - Python [dependencies][requirements.txt] must be manually resolved  
-    - fire2a's plugin repo/store [link][toolbox-server] must be added as a custom plugin source (*)  
+# Instalación
+[Guía completa aquí](/docs/docs/qgis-cookbook/README.html) o resumen:
+1. [QGIS] versión > 3.28.12 (la versión LTR es en su mayoría compatible pero carece, por ejemplo, de agrupación de resultados de simulación; se recomienda la última versión)
+2. La instalación de fire2a-toolbox casi se puede hacer directamente desde el **[gestor de plugins]** de QGIS *pero*:
+    - Las [dependencias][requirements.txt] de Python deben resolverse manualmente  
+    - El enlace del repositorio/tienda de plugins de fire2a [enlace][toolbox-server] debe agregarse como una fuente de plugins personalizada (*)
 
-**Done!** *fire2a-toolbox icon <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px"> will appear on the algorithms list of the Processing Toolbox Panel*
+**¡Listo!** *El icono de fire2a-toolbox <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px"> aparecerá en la lista de algoritmos del Panel de la Caja de Herramientas de Procesamiento*
 
+(*) : Debido a que contiene código binario c++ compilado -para el simulador Cell2Fire, pero el código binario no se puede verificar fácilmente, por lo que el plugin no se permite en el [repositorio/tienda](https://plugins.qgis.org/). Sin embargo, todo nuestro código es de código abierto, su compilación es "reproducible" por una acción automatizada; todo se puede auditar en [fire2a@github](
 
-(*) : Because it contains compiled c++ binary code -for Cell2Fire simulator, but binary code cannot be easily verified hence the plugin is not allowed on the [regular repo/store](https://plugins.qgis.org/). Nevertheless all our code is open source, its build is "reproducible" by an automated action; all can be audited on [fire2a@github](https://github.com/fire2a)
+* **Probadores** deben instalar por archivo `.zip` desde las [versiones][toolbox-releases] de fire2a-toolbox
+* **Desarrolladores** deben clonar nuestros repos ([toolbox-repo], [c2f-repo], [fire2a-lib-repo]), compilar cell2fire, hacer un enlace simbólico y configurar dependencias de python adicionales para contribuir ([tl;dr](/docs/docs/Cell2Fire/README.html#unix-overview))
 
-* **Testers** should instead install by `.zip` file from fire2a-toolbox [releases][toolbox-releases]
-* **Developers** should clone our repos ([toolbox-repo], [c2f-repo], [fire2a-lib-repo]), compile cell2fire, symlink and setup additional python dependencies to contribute ([tl;dr](/docs/docs/Cell2Fire/README.html#unix-overview))
+# Primer ejecución de prueba
+(¡Mira el gif al final!) Obtener o generar un ráster de modelo de combustible puede ser desafiante (próximamente tutorial), por lo que la forma más simple es:
 
-# First test run
-(Check gif at the end!) Getting or generating a fuel model raster can be challenging (tutorial coming soon), so the simplest way is to:
-1. Use the downloader algorithm <img src="./img/downloader.svg"  style="height: 16px"> to get a prepared instance
-2. Save an empty [project] into the downloaded folder (where fuels, elevation and Weather.csv files are)
-3. Drag and drop layers from the project home (file Browser Panel) into the Layer Panel
-4. Set the same CRS to the layers and project (any in meters suffices)
-5. Open the simulator algorithm <img src="./img/forestfire.svg"  style="height: 16px">, select the proper fuelmodel (Canada, Kitral or S&B), select the fuel layer in the fuel dropdown, press run.
+1. Usar el algoritmo de descarga <img src="./img/downloader.svg"  style="height: 16px"> para obtener una instancia preparada
+2. Guardar un [proyecto] vacío en la carpeta descargada (donde están los archivos de combustible, elevación y Weather.csv)
+3. Arrastrar y soltar capas desde el inicio del proyecto (Panel de Explorador de archivos) al Panel de Capas
+4. Establecer el mismo SRC a las capas y al proyecto (cualquiera en metros es suficiente)
+5. Abrir el algoritmo del simulador <img src="./img/forestfire.svg"  style="height: 16px">, seleccionar el modelo de combustible adecuado (Canadá, Kitral o S&B), seleccionar la capa de combustible en el menú desplegable de combustible, presionar ejecutar.
 
 <a name="anchor">
 ![](img/first_run.gif){: width="75%" }
 </a>
 
-Note: Step 2 can be skipped but it is cumbersome to select each layer from file explorers than to use the dropdown to select between current loaded layers; Also `Weather.csv` is automatically selected when there's a saved project.
+Nota: El paso 2 se puede omitir, pero es engorroso seleccionar cada capa desde los exploradores de archivos que usar el menú desplegable para seleccionar entre las capas cargadas actualmente; Además, `Weather.csv` se selecciona automáticamente cuando hay un proyecto guardado.
 
 ![](img/algo_sim-first_run.gif){: width="95%" }
 
-# Deployed algorithms
+# Algoritmos desplegados
 
 **Fire Analytics Toolbox** <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bonfire.svg"  alt='icon-missing' style="height: 16px">
 
@@ -83,20 +83,20 @@ Note: Step 2 can be skipped but it is cumbersome to select each layer from file 
 : [Raster knapsack optimization](./algo_knapsack.html)
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
-: Polygon knapsack optimization : Optimizes the classical knapsack problem using polygons with values and/or weights attributes, returns a polygon layer with the selected polygons.
+: Polygon knapsack optimization : Optimiza el problema clásico de la mochila utilizando polígonos con atributos de valores y/o pesos, devuelve una capa de polígonos con los polígonos seleccionados.
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
-: Polygon treatment optimization : Using possible treatments for each polygon, Maximize the changed value of the treated polygons
+: Polygon treatment optimization : Usando posibles tratamientos para cada polígono, maximiza el valor cambiado de los polígonos tratados
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
-: Raster treatment optimization : Maximize the changed value of the treated raster, deciding which treatment to apply to each pixel (or no change), subject to budget and area constraints
+: Raster treatment optimization : Maximiza el valor cambiado del ráster tratado, decidiendo qué tratamiento aplicar a cada píxel (o sin cambios), sujeto a restricciones de presupuesto y área
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
-: Raster treatment & teams optimization : Maximize the changed value of the treated raster, deciding which treatment to apply by which team to each pixel (or no change), subject to budget, area constraints and team capabilities
+: Raster treatment & teams optimization : Maximiza el valor cambiado del ráster tratado, decidiendo qué tratamiento aplicar por qué equipo a cada píxel (o sin cambios), sujeto a restricciones de presupuesto, área y capacidades del equipo
 
 **Simulator Post Processing (simpp)**
 
-Bundle: all post processing combined for convenience
+Bundle: Todos los post procesamientos combinados para conveniencia
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/ignitionpoint.svg"  alt='icon-missing' style="height: 16px">
 : Ignition Point(s)
@@ -108,7 +108,7 @@ Bundle: all post processing combined for convenience
 : Propagation Digraph
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/fireface.svg"  alt='icon-missing' style="height: 16px">
-: Spatial Statistics, any of: Hit Rate Of Spread, Flame Length, Byram Fire Line Intensity, Crown Fire Scar, Crown Fire Fuel Consumption Ratio, Surface Burn Fraction
+: Spatial Statistics, cualquiera de: Hit Rate Of Spread, Flame Length, Byram Fire Line Intensity, Crown Fire Scar, Crown Fire Fuel Consumption Ratio, Surface Burn Fraction
 
 **simpp Risk Metrics**
 
@@ -121,9 +121,9 @@ Bundle: all post processing combined for convenience
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bodyscar.svg"  alt='icon-missing' style="height: 16px">
 : Burn Probability
 
-**Auxiliary**
+**Auxiliariares**
 
-Match AII Grid Rasters : Simplifies using gdal translate thrice, to clip extent, then resize and replace geotransform to match an ascii raster into another
+Match AII Grid Rasters : Simplifica el uso de gdal translate tres veces, para recortar la extensión, luego redimensionar y reemplazar el geotransform para que coincida con un ráster ascii en otro
 
 
 ---
