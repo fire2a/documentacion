@@ -52,14 +52,18 @@ Clearly delimites: inputs, outputs, algorithms and contexts; achieving seamless 
 * **Developers** should clone our repos ([toolbox-repo], [c2f-repo], [fire2a-lib-repo]), compile cell2fire, symlink and setup additional python dependencies to contribute ([tl;dr](/docs/docs/Cell2Fire/README.html#unix-overview))
 
 # First test run
-Getting or generating a fuel model raster can be challenging (tutorial coming soon), so the simplest way is to:
+(Check gif at the end!) Getting or generating a fuel model raster can be challenging (tutorial coming soon), so the simplest way is to:
 1. Use the downloader algorithm <img src="./img/downloader.svg"  style="height: 16px"> to get a prepared instance
 2. Save an empty [project] into the downloaded folder (where fuels, elevation and Weather.csv files are)
 3. Drag and drop layers from the project home (file Browser Panel) into the Layer Panel
 4. Set the same CRS to the layers and project (any in meters suffices)
 5. Open the simulator algorithm <img src="./img/forestfire.svg"  style="height: 16px">, select the proper fuelmodel (Canada, Kitral or S&B), select the fuel layer in the fuel dropdown, press run.
 
-Step 2 can be skipped but is more cumbersome to select each layer from a file explorer than to use the dropdown to select between current loaded layers; Also `Weather.csv` is automatically selected.
+<a name="anchor">
+![](img/first_run.gif){: width="75%" }
+</a>
+
+Note: Step 2 can be skipped but it is cumbersome to select each layer from file explorers than to use the dropdown to select between current loaded layers; Also `Weather.csv` is automatically selected when there's a saved project.
 
 ![](img/algo_sim-first_run.gif){: width="95%" }
 
@@ -73,10 +77,26 @@ Step 2 can be skipped but is more cumbersome to select each layer from a file ex
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/downloader.svg"  alt='icon-missing' style="height: 16px">
 : (Simulator) Instances Downloader
 
+**Decision optimization**
+
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
 : [Raster knapsack optimization](./algo_knapsack.html)
 
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Polygon knapsack optimization : Optimizes the classical knapsack problem using polygons with values and/or weights attributes, returns a polygon layer with the selected polygons.
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Polygon treatment optimization : Using possible treatments for each polygon, Maximize the changed value of the treated polygons
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Raster treatment optimization : Maximize the changed value of the treated raster, deciding which treatment to apply to each pixel (or no change), subject to budget and area constraints
+
+<img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/firebreakmap.svg"  alt='icon-missing' style="height: 16px">
+: Raster treatment & teams optimization : Maximize the changed value of the treated raster, deciding which treatment to apply by which team to each pixel (or no change), subject to budget, area constraints and team capabilities
+
 **Simulator Post Processing (simpp)**
+
+Bundle: all post processing combined for convenience
 
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/ignitionpoint.svg"  alt='icon-missing' style="height: 16px">
 : Ignition Point(s)
@@ -101,7 +121,9 @@ Step 2 can be skipped but is more cumbersome to select each layer from a file ex
 <img src="https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/fireanalyticstoolbox/assets/bodyscar.svg"  alt='icon-missing' style="height: 16px">
 : Burn Probability
 
+**Auxiliary**
 
+Match AII Grid Rasters : Simplifies using gdal translate thrice, to clip extent, then resize and replace geotransform to match an ascii raster into another
 
 
 ---
@@ -121,7 +143,7 @@ Step 2 can be skipped but is more cumbersome to select each layer from a file ex
 [toolbox]: https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html
 [form dialog]: https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html#the-algorithm-dialog
 [Batch of forms]: https://docs.qgis.org/latest/en/docs/user_manual/processing/batch.html#processing-batch
-[cli wrapper]: https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone
+[cli wrapper]: https://docs.qgis.org/latest/en/docs/user_manual/processing/standalone.html
 [python console]: https://docs.qgis.org/latest/en/docs/user_manual/plugins/python_console.html#console
 [calling it]: https://docs.qgis.org/latest/en/docs/user_manual/processing/console.html
 [standalone code]: https://raw.githubusercontent.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/main/script_samples/standalone.py
