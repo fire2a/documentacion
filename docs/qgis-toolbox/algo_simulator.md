@@ -10,38 +10,38 @@ parent: QGIS Fire Analytics Toolbox
 {: .no_toc}
 <details closed markdown="block">
   <summary>
-    Tabla de contenidos
+    Table of contents
   </summary>
   {: .text-delta }
 1. TOC
 {:toc}
 </details>
-# Preparación de datos
+# Data preparation
 ## Rasters
-* Las instancias preparadas están disponibles con el algoritmo "descargador de instancias"
-* Todos los rásteres (y el proyecto) deben estar proyectados en el mismo SRC, en metros cuadrados
-* Usando el ráster de combustible como base, los rásteres deben coincidir:
-    - En número de píxeles en ambas direcciones
-    - A lo sumo un desplazamiento de un píxel en cada dirección
-    - Por lo tanto, el tamaño del píxel debe ser muy cercano [~mm]
+* Prepared instances available with "instance downloader" algorithm
+* All rasters (and project) must be projected in the same CRS, in squared meters
+* Using the fuel raster as base, rasters must match:
+    - In number of pixels in both direction
+    - At most one pixel offset in each direction
+    - Hence pixel size must be very close [~mm]
 
-| rásteres | propósito | unidades |
+| rasters | purpose | units |
 | --- | --- | --- |
-| combustibles | codificar el paisaje | tabla de modelos de combustible |
-| elevación | dem | metros |
-| cbh | altura de la base del dosel es donde está la rama más baja | metros |
-| cbd | densidad a granel del dosel | kg/m3 |
-| ccf | fracción de cobertura del dosel es como un indicador de cobertura de nubes | [0,1] |
-| py | mapa de densidad de probabilidad es para dibujar igniciones | [0,1] |
+| fuels | encode landscape | fuel model table |
+| elevation | dem | meters |
+| cbh | canopy base height is where the lowest branch is | meters |
+| cbd | canopy bulk density | kg/m3 |
+| ccf | canopy cover fraction is like cloud cover indicator | [0,1] |
+| py | probability density map is to draw ignitions | [0,1] |
 
-## Clima
-**Especificación de la tabla Weather.csv:**
-* columnas mínimas: `name,timestamp,wind-speed,wind-direction`
-* filas: por defecto cada fila dura una hora
-* columnas dependientes del modelo de combustible:
+## Weather
+**Weather.csv table specification:**
+* minimal columns: `name,timestamp,wind-speed,wind-direction`
+* rows: by default each row lasts one hour
+* fuel model dependant columns:
 
-Canadá
-: `Scenario,datetime,APCP,TMP,RH,WS,WD,FFMC,DMC,DC,ISI,BUI,FWI`
+Canada
+: `Scenario,datetime,APCP,TMP,RH,WS,WD,FFMC,DMC,DC,ISI,BUI,FWI`  
 
 Kitral
 : `Instance,datetime,WS,WD,TMP,RH`  
@@ -49,122 +49,124 @@ Kitral
 Scott&Burgan
 : `Scenario,datetime,WS,WD,FireScenario`  
 
-* FireScenario fue deprecado por "Live & Dead Fuel Moisture Content Scenario [1=seco..4=húmedo]"
-* No es necesario ser consistente con las marcas de tiempo, pero se debe seguir la isoformat `AAAA-MM-DDTHH:MM:SS`
-* TrabajoEnProgreso: unificar formatos de clima, confiar en los nombres de las columnas en lugar del orden para leerlos
+* FireScenario was deprecated by "Live & Dead Fuel Moisture Content Scenario [1=dry..4=moist]"
+* There's no need to be consistent with the timestamps, but isoformat `YYYY-MM-DDTHH:MM:SS` should be followed
+* WIP: unifying weather formats, relying on column names instead of order to read them
 
-<a href="#top">volver_arriba</a>
+<a href="#top">back to top</a>
 {: style="text-align: right;"}
 
-# Rellenando el diálogo
-El diálogo del simulador se divide en cuatro secciones principales: *Paisaje, igniciones, clima y salidas*. Y dos opcionales: configuración de ejecución y opciones avanzadas.
-Aunque intuitivo (por ejemplo, hacer coincidir cada unidad dimensional mostrada entre corchetes), cada sección se comenta a continuación:
+# Filling the dialog
+The simulator dialog is divided in four main sections: *Landscape, ignitions, weather and outputs*. And two optional: run-configuration and advanced options.
+Altough intuitive (e.g. match each dimensional unit shown in square brackets), each section is commented below:
 
-## Paisaje
-![Paisaje](img/algo_sim-landscape.png){: width="85%"}
-* El modelo de combustible de superficie debe coincidir con la codificación del ráster de combustible (ver [tablas de búsqueda])
-* La casilla de verificación de estilo de ráster no solo "pinta" usando el algoritmo 'native:setlayerstyle' según cada  [capa de estilo qml], sino que también muestra la clasificación en el panel de capas
-* Habilitar el comportamiento del fuego de copa tiene sentido *incluso sin rásteres de dosel porque hay números estándar fijos* para ellos según la codificación del combustible (solo disponible en el modelo de combustible de Canadá)
+## Landscape  
+![Landscape](img/algo_sim-landscape.png){: width="85%"}
+* The surface fuel model must match the fuel raster codification (see [lookup tables])
+* The style fuel raster checkbox not only "paints" using 'native:setlayerstyle' algorithm according to each [qml layer style], but also show the classification on the Layers panel
+* Enabling crown fire behavior makes sense *even without canopy rasters because there are fixed standard numbers* for them according to the fuel codification (Only available in Canada's fuel model)
 
-<a href="#top">volver_arriba</a>
+<a href="#top">back to top</a>
 {: style="text-align: right;"}
 
-## Igniciones
-![Igniciones](img/algo_sim-ignition.png){: width="85%"}
-* Al simular **una o pocas simulaciones**, obtener una salida detallada es relevante (como **digrafo de propagación y cicatrices de propagación**)
-* Al simular **cientos o miles**, las estadísticas de media y desviación estándar son más importantes que una salida detallada que puede ahogar innecesariamente la computadora (usar **cicatriz final** en lugar de cicatrices de propagación; el digrafo de propagación es la entrada para las medidas de DPV y Centralidad; pero no se podrá cargar en la vista!)
-* Hay 3 formas de generar igniciones:
-&nbsp; 0. Sortear un píxel aleatorio pero quemable **distribuido uniformemente**
-&nbsp; 1. Sortear usando un ráster de **mapa de probabilidad**
-&nbsp; 2. Especificar un **punto** y opcionalmente un radio para especificar un **círculo** desde donde sortear uniformemente
-* Si se pasan varios puntos en la "capa de un solo punto", solo se tomará en consideración el último[?] (ver id de característica (fid) en la tabla de atributos de la capa)
-* Tenga en cuenta que hay una entrada para definir semilla aleatoria, por lo tanto, la misma semilla implica dibujar el mismo punto (o secuencia de puntos)
+## Ignitions  
+![Ignitions](img/algo_sim-ignition.png){: width="85%"}
+* When simulating **one or few simulations**, a detailed output is relevant (like **propagation digraph and propagation scars**)
+* When simulating **hundreds or thousands**, mean and std.dev. statistics are more important than detailed output that can choke the computer unnecessarily (use **final scar** instead of propagation scars; propagation digraph is input for DPV and Centrality measures; but it can't be loaded into view!)
+* There are 3 ways to generate ignitions:  
+&nbsp; 0. Draw a **uniformly distributed** random but burnable pixel  
+&nbsp; 1. Draw using a **probability map** raster  
+&nbsp; 2. Specify a **point** and optionally a radius to specify a **circle** from where uniformly draw  
+* If passing various points in the "single point layer", only the last[?] will be taken into consideration (see feature id (fid) in layer attribute table)
+* Note that afterwards there's a random seed input, hence same seed implies drawing the same point(s sequence)
 
-<a href="#top">volver_arriba</a>
+<a href="#top">back to top</a>
 {: style="text-align: right;"}
 
-## Tiempo Atmosférico
-![Tiempo](img/algo_sim-weather.png){: width="85%"}
-* El simulador asume **parámetros meteorológicos constantes en la cuadrícula**, pueden cambiar con el tiempo, pero no en el espacio
-* Estos parámetros se pasan al simulador usando un archivo `.csv`
-* En una simulación regular **cada fila dura 1 hora**, cuando las filas terminan, la simulación termina
-* Hay dos opciones:
-&nbsp; 0. Usar solo un `Weather.csv`
-&nbsp; 1. Sortear al azar de un directorio `Weathers/WeatherN.csv : N = 1,2,...` nombrado correlativamente
-* TrabajoEnProgreso: una base de datos meteorológica; mientras tanto, los climas se pueden obtener de *weather.org desde cualquier ubicación desde 1970 hasta la fecha actual*
+## Weather  
+![Weather](img/algo_sim-weather.png){: width="85%"}
+* The simulator assumes **constant weather parameters across the grid**, they can change over time, but not space
+* These parameters are passed into the simulator using a `.csv` file
+* In a regular simulation **each row lasts 1 hour**, when the rows end, the simulation ends
+* There are two options:  
+&nbsp; 0. Using just one `Weather.csv`  
+&nbsp; 1. Drawing at random from a directory `Weathers/WeatherN.csv : N = 1,2,...` correlatively named 
+* WIP: A weather database; meanwhile weathers can be obtained from *weather.org from any location from 1970 until present day*  
 
-volver a <a href="#weather">especificacion del tiempo</a> \| <a href="#top">arriba</a>
+back to <a href="#weather">weather spec.</a> \| <a href="#top">top</a>
 {: style="text-align: right;"}
 
-## Configuración de ejecución
-![Configuración de ejecución](img/algo_sim-run-config.png){: width="85%"}
-* Solo baje los hilos de la CPU de la simulación si planea seguir trabajando en otra cosa mientras las simulaciones se ejecutan en segundo plano (para la oficina o la navegación web nunca necesitará más de 2)
-* Llevar un registro de la semilla garantiza la reproducibilidad de todos los números aleatorios generados
+## Run Configuration  
+![Run configuration](img/algo_sim-run-config.png){: width="85%"}
+* Only lower the simulation cpu threads if you plan to keep working on something else while the simulations run in the background (for office or web-browsing you'll never need more than 2)  
+* Keeping track of the seed yields reproducibility for all generated random numbers  
 
-<a href="#top">volver_arriba</a>
-{: style="text-align: right;}
+<a href="#top">back to top</a>
+{: style="text-align: right;"}
 
-## Salidas
-Esta sección tiene tres partes principales: opciones, avanzadas y directorios de destino.
-![Salidas](img/algo_sim-outputs-closedadvanced.png){: width="85%"}
+## Outputs
+This section has three main parts: options, advanced and destination directories.
+![Outputs](img/algo_sim-outputs-closedadvanced.png){: width="85%"}  
 
-### Opciones
-* Acceda a la selección múltiple haciendo clic en los `...` a la derecha
-![Salidas del simulador](img/algo_sim-options.png){: width="85%}
-* La mayoría de las salidas se adaptan según sean 1 o >1 simulaciones
-* Al simular **una o pocas simulaciones**, una salida detallada es relevante (como **digrafo de propagación y cicatrices de propagación**)
-* Al simular **cientos o miles**, las estadísticas de media y desviación estándar son más importantes que una salida detallada que puede ahogar innecesariamente la computadora (usar **cicatriz final** en lugar de cicatrices de propagación; el digrafo de propagación es la entrada para las medidas de DPV y Centralidad; pero no se podrá cargar en la vista!)
+### Options
+* Access the multiple selection by clicking the `...` on the right
+![Simulator outputs](img/algo_sim-options.png){: width="85%"}  
+* Most outputs adapt according to being 1 or >1 simulations
+* When simulating **one or few simulations**, a detailed output is relevant (like **propagation digraph and propagation scars**)
+* When simulating **hundreds or thousands**, mean and std.dev. statistics are more important than detailed output that can choke the computer unnecessarily (use **final scar** instead of propagation scars; propagation digraph is input for DPV and Centrality measures; but it can't be loaded into view!)
 
-| nombre de la salida | tipo de unidad | descripción |
+| output name  | unit-type | description |
 |:-------------|:------------------|:------|
-| Cicatrices finales | ráster `0,1` |  |
-| Gráfico dirigido de propagación | líneas vectoriales `períodos` | bordes etiquetados con el tiempo del evento de simulación |
-| Tasa de propagación de incendios | ráster float32 `m/m` | multibanda x simulación y bi-banda media y desviación estándar |
-| Cicatrices de propagación de incendios | polígonos | _animar añadiendo la columna_ `=now()+ make_interval(hours:=time)` |
-| Longitud de la llama | ráster float32 `m` | multibanda x simulación y bi-banda media y desviación estándar |
-| Intensidad de la línea de fuego de Byram | ráster float32 `kW/m` | multibanda x simulación y bi-banda media y desviación estándar |
-| Cicatriz de incendio de copa | ráster `0,1` | multibanda x simulación y bi-banda media y desviación estándar |
+| Final Fire Scars | raster `0,1` |  |
+| Propagation Directed Graph | vector lines `periods` | edges labeled with simulation event time |
+| Hit Rate Of Spread | raster float32 `m/m` | multiband x simulation and bi-band mean&std |
+| Propagation Fire Scars | polygons | _animate adding the column_ `=now()+ make_interval(hours:=time)` |
+| Flame Length| raster float32 `m` | multiband x simulation and bi-band mean&std |
+| Byram Fireline Intensity | raster float32 `kW/m` | multiband x simulation and bi-band mean&std |
+| Crown Fire Scar | raster `0,1` | multiband x simulation and bi-band mean&std |
+| Crown Fire Fuel Consumption Ratio raster | `0,1` | multiband x simulation and bi-band mean&std |
+| Surface Burn Fraction raster | `0,1` | multiband x simulation and bi-band mean&std |
 
-<a href="#top">volver_arriba</a>
-{: style="text-align: right;}
-
-### Opciones Avanzadas
-* <details><summary>Desplegar el bloque usando el triángulo</summary> a la izquierda de Parámetros Avanzados</details>
-![Avanzado](img/algo_sim-advanced.png){: width="85%"}
-* Cualquier~~cosa~~ **parámetros de línea de comandos pueden ser añadidos**, consulte [Cell2Fire.ReadArgs.cpp](https://github.com/fire2a/C2F-W/blob/main/Cell2FireC/ReadArgs.cpp#L40), and [firetoolbox.config]() para documentación
-* **Dry run** es útil para construir la carpeta de la instancia y obtener la línea de comandos completa que se ejecutaría, como una forma de **verificar o modificar** la instancia antes de ejecutar
-    1. Los usuarios de Windows deben abrir la terminal de OSGeo4W antes de ejecutar cell2fire.py
-    2. Cambie el directorio a `path` antes de ejecutar el comando
-
-<a href="#top">volver arriba</a>
+<a href="#top">back to top</a>
 {: style="text-align: right;"}
 
-### Directorios de destino
-* El simulador define directorios de entrada y salida (instancia y resultados), reduciendo la complejidad al nombrar siempre los archivos de la misma manera; Fire2a-toolbox se encarga de construir estos directorios y escribir archivos con los nombres adecuados [y formatos... próximamente].
-* **tmp significa sin preocupaciones**: Por defecto, los algoritmos de procesamiento de QGIS se ejecutan en memoria y/o se escriben en directorios temporales; *la ventaja es comenzar siempre desde una pizarra limpia y limpieza asistida por el sistema operativo, evitando que las unidades en la nube se desordenen; pero la desventaja es que es un poco engorroso llegar a esas ubicaciones temporales*. El complemento "Save All" codifica y guarda todas las capas cargadas actualmente donde elija, úselo después de cargar los resultados y nunca se preocupe por especificar directorios.
-* Hay 3 estrategias -mutuamente excluyentes- para especificar dónde construir los directorios de instancia y resultados:
+### Advanced options
+* <details><summary>Un/Fold the block using the triangle</summary> at the left of Advanced Parameters</details> 
+![Advanced](img/algo_sim-advanced.png){: width="85%"}
+* Any~~thing~~ **command line parameters can be appended**, refer to [Cell2Fire.ReadArgs.cpp](https://github.com/fire2a/C2F-W/blob/main/Cell2FireC/ReadArgs.cpp#L40), and [cell2fire.py.ParseArgs](https://github.com/fire2a/C2F-W/blob/main/Cell2FireC/cell2fire.py#L19) for documentation
+* Dry run is useful for building the instance folder and getting the full command line that would be executed, as a way to **verify or modify the instance before running**
+    1. Windows users must open OSGeo4W shell before running cell2fire.py
+    2. Change directory to `path` before running the command
 
-Temporal
-: No rellene nada, ¡recomendado! (por defecto vacío)
+<a href="#top">back to top</a>
+{: style="text-align: right;"}
 
-Manualmente
-: especifíquelos: por ruta absoluta o relativa al directorio de inicio del usuario[?]
+### Destination directories: 
+* The (Cell2)Fire Simulator defines input & outputs (instance & results) directories, reducing complexity by always naming files the same; Fire2a-toolbox takes care of builds these directories and writing files with the proper names [and formats... coming soon]. 
+* **tmp means no worries**: By default QGIS processing algorithms are ran in memory and/or written to temporary directories; *upside always start from a clean slate and OS assited cleaning up, avoid cloud drives messing up; but the downside is being a bit cumbersome to reach those temporary locations*. The "Save All" plugin automatically encodes and save all currently loaded layers wherever you choose, use it after loading the results, and never worry about specifying directories.
+* There are 3 -mutually exclusive- strategies specifying where to build instance & results directories:
+
+Temporary
+: Don't fill anything, recommended! (default empty)
+
+Manually
+: specify them: by absolute path o relative to user's home[?]
 ![](img/algo_sim-output-instance-results-input.png)
 
-Instancia a lo largo del proyecto
-: Se creará un directorio llamado `firesim_YYMMDD_HHMMSS`; el proyecto debe guardarse [en una ubicación sin espacios en su ruta]
-![](img/algo_sim-output-instance-results-input.png)
+Instance along project
+: A directory named `firesim_YYMMDD_HHMMSS` will be created; the project must be saved [in a location without spaces in its path]
+![](img/algo_sim-output-instance-checkbox.png)
 
-Resultados dentro de la instancia
-: Se creará un directorio llamado `results` dentro de la instancia (por defecto)
+Results inside Instance
+: A directory named `results` will be created inside Instance (default)
 ![](img/algo_sim-output-results-checkbox.png)
 
-<a href="#top">volver arriba</a>
+<a href="#top">back to top</a>
 {: style="text-align: right;"}
 
-# Diálogo completo
-![Diálogo completo](img/algo_sim-dialog.png){: width="85%"}
-
+# Full Dialog 
+![Full Dialog](img/algo_sim-dialog.png){: width="85%"}
+       
 ---
-[tablas de búsqueda]: https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/tree/main/fireanalyticstoolbox/simulator
-[capa de estilo qml]: https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/tree/main/fireanalyticstoolbox/simulator
+[lookup tables]: https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/tree/main/fireanalyticstoolbox/simulator
+[qml layer style]: https://github.com/fire2a/fire-analytics-qgis-processing-toolbox-plugin/tree/main/fireanalyticstoolbox/simulator

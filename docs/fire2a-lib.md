@@ -1,47 +1,46 @@
 ---
 layout: default
-title: Librería de Algoritmos
+title: Algorithms Library
 nav_order: 3
 has_toc: false
 ---
 {: .warning}
-Código en Python para línea de comandos; Revisa la versión gráfica amigable: [fire2a toolbox](/docs/qgis-toolbox/README.html)
+CLI Python code; Check the graphical user friendly version: [fire2a toolbox](/docs/qgis-toolbox/README.html)
 # fire2a-lib
 {: .no_toc}
 <details closed markdown="block">
   <summary>
-    Tabla de contenidos
+    Table of contents
   </summary>
   {: .text-delta }
 1. TOC
 {:toc}
 </details>
 
-Esta biblioteca es un paquete de python compuesto por nuestros algoritmos relacionados con incendios, utilidades comunes y herramientas para GIS, optimización, agrupación, etc.
+This library is python package composed of our novel fire related algorithms, common utilities and tools for GIS, optimization, clustering, etc.
 
-Algúnos casos de uso:
+Some use cases:
 
-* Quieres mirar/usar/adaptar la implementación del Valor de Protección Aguas Abajo?
-* Nuevamente olvidaste cómo cargar un ráster .tif en un array numpy + un diccionario de propiedades?
-* Necesitas un algoritmo de agrupación de paisajes?
+* Want to look/use/adapt DownStream Protection Value implementation code?
+* I forgot again, how to load a .tif raster into a numpy array + a properties dictionary?
 
-Desarrolladores y académicos son bienvenidos a contribuir!
+Developers & academic researchers are welcome to contribute!
 
-* [Repositorio]  
-* [Documentación API]
+* [Repository]  
+* [API Documentation]
 
-## Inicio Rápido
-Sugerimos instalar [QGIS] antes de usar, aunque no todos los módulos dependen de él. 
+## Quickstart
+We strongly recommend installing [QGIS] before usage, although not all modules depend on it. 
 ```bash
 $ pip install git+https://github.com/fire2a/fire2a-lib.git
 $ ipython
-In [1]: from fire2a.<presiona-tab-para-ver-submodulos> import <presiona-tab-para-ver-funciones>
+In [1]: from fire2a.<press-tab-to-continue>
 ```
-También revisa las [recetas-qgis] y guías del [Repositorio].
-[tl;dr resumen para desarrolladores](/docs/Cell2Fire/README.html#unix-overview)
+Algo check the [qgis-cookbook] and [Repository] guides.
+[tl;dr developer here](/docs/Cell2Fire/README.html#unix-overview)
 
-## Guía del desarrollador
-Árbol de componentes principales:
+## Developer guide
+A tree of principal components:
 ```bash
 ~
 ├── C2F-W
@@ -65,7 +64,7 @@ También revisa las [recetas-qgis] y guías del [Repositorio].
 │   │   │   ├── raster.py
 │   │   │   ├── ...
 │   │   │   └── utils.py
-│   │   └── fire2template
+│   │   └── fire2a-tutorials
 │   │       ├── __init__.py
 │   │       └── template.py
 │   └── tests
@@ -78,7 +77,7 @@ También revisa las [recetas-qgis] y guías del [Repositorio].
         ├── fireanalyticstoolbox.py
         ├── fireanalyticstoolbox_provider.py
         ├── fireanalyticstoolbox_algorithm.py
-        ├── algorithm....py
+        ├── algorithm_...py
         ├── requirements.txt
         ├── fire2a -> ~/fire2a-lib/src/fire2a (versión release)
         └── simulator
@@ -94,7 +93,8 @@ También revisa las [recetas-qgis] y guías del [Repositorio].
 
 ---
 [QGIS]: https://qgis.org
-[Repositorio]: https://github.com/fire2a/fire2a-lib/
-[Documentación API]: https://fire2a.github.io/fire2a-lib/src/index.html
+[Repository]: https://github.com/fire2a/fire2a-lib/
+[API Documentation]: https://fire2a.github.io/fire2a-lib/src/index.html
 [dialog-plugin]: qgis-dialog/README.html
-[recetas-qgis]: qgis-cookbook/README.html
+[processing-toolbox-plugin]: qgis-toolbox/README.html
+[qgis-cookbook]: qgis-cookbook/README.html
