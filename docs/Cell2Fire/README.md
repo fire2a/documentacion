@@ -6,53 +6,53 @@ has_children: true
 has_toc: false
 ---
 {: .warning}
-Código C++ de línea de comandos; Consulta la versión gráfica amigable: [fire2a toolbox](docs/qgis-toolbox/README.html)
+CLI C++ code; Check the graphical user friendly version: [fire2a toolbox](docs/qgis-toolbox/README.html)
 # Cell2Fire++
 {: .no_toc}
 <details closed markdown="block">
   <summary>
-    Tabla de contenidos
+    Table of contents
   </summary>
   {: .text-delta }
 1. TOC
 {:toc}
 </details>
 
-Cell2Fire es un simulador de incendios forestales y de paisajes silvestres basado en una cuadrícula 2D, enfocado en áreas a gran escala y simulaciones rápidas para proporcionar análisis de riesgos espaciales robustos, aprovechando los métodos de cálculo paralelo de c++.
+Cell2Fire is a 2D-grid-based forest and wildland landscape fire simulator, focused on large scale areas and fast simulations to provide robust risk spatial analytics, harnessing c++ parallel computation methods.
 
-Version actual
-- [W](https://github.com/fire2a/c2f-w) incluye los tres modelos de comportamiento de combustible!
+Current Version:
+- [W](https://github.com/fire2a/c2f-w) bundles all three fuel model behaviors!
 
-Sabores liberados (*ya no se mantienen, solo para archivo*):
+Released flavors (*no longer maintained*):
 - [Scott & Burgan](https://github.com/fire2a/C2FSB)
 - [Kitral](https://github.com/fire2a/C2FK)
 - [FBP](https://github.com/fire2a/C2FFBP)
 
-El [original](https://github.com/cell2fire/Cell2Fire/)
+The [OG](https://github.com/cell2fire/Cell2Fire/)
 
-# Ejemplos de salida
+# Output examples
 
 ## Scott & Burgan
-### Zona 60 de Previncat (Instancia Catalana): bosque y propagación de fuego simulada con su correspondiente cicatriz y árbol de propagación de crecimiento.
+### Previncat's Zone 60 (Catalonian Instance): forest and a simulated fire spread with its corresponding scar and growth propagation tree. 
 ![Example-Instance_Scar](img/c2fsb-example-scar.png)
-### Metricas de riesgo: Probabilidad de quema (BP), Centralidad de Intermediación (BC), Valor de Protección Agua Abajo (DPV), y Árbol de Propagación de Crecimiento (GPT).
+### Risk metrics: Burn Probability (BP), Betweenness Centrality (BC), Downstream Protection Value (DPV), and Growth Propagation Tree (GPT). 
 ![Example-Risck_Metrics](img/c2fsb-example-metrics.png)
 
 ## Kitral
-### El Portillo, simulación con comportamiento de fuego de copa.
+### El Portillo, simulation with crown fire behavior.
 ![Example-El Portillo-Crown fire](img/c2fk-El_portillo.png)
 
-## Sistema Canadiense de Predicción de Comportamiento de Incendios Forestales
+## Canadian Forest Fire Behavior Prediction System
 
 |:-------------|:------------------|
-| Bosque Dogrib, Canada ![](img/c2fFBP-Example4.png){: width="100%" } | shortest paths propagation ![](img/c2fFBP-Example1.png){: width="80%" } |
-| Caminos más cortos de propagación e intensidad ROS ![](img/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](img/c2fFBP-Example3.png){: width="80%" } |
+| Dogrib forest, Canada ![](img/c2fFBP-Example4.png){: width="100%" } | shortest paths propagation ![](img/c2fFBP-Example1.png){: width="80%" } |
+| Shortest paths propagation and ROS intensity ![](img/c2fFBP-Example2.png){: width="100%" } | Burn-Probability ![](img/c2fFBP-Example3.png){: width="80%" } |
 
 
-# Compilación
-Lanzamientos precompilados, los usuarios normales probablemente no necesitan esta guía.
+# Compiling
+Releases are bundled with pre-compiled binaries, normal users probably don't need this guide.
 
-Verifica los [artefactos de acción del repositorio](https://github.com/fire2a/C2F-W/actions) para la última actualización de las compilaciones automáticas.
+Check the [repo's action artifacts](https://github.com/fire2a/C2F-W/actions) for the latest info on automated builds
 
 ## UNIX Overview
 ```bash
