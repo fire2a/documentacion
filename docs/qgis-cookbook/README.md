@@ -57,7 +57,7 @@ There are 3 ways of installing plugins, the recommended (using a our custom repo
 1. Install QGIS for [Linux🗽](#linux-), [MacOS](#macos-) or [Windows](#windows-)  
 _English language version is more reliable_  
 __Don't open it yet!__  
-_Decision Optimization algorithm users __beware__: At the moment (May 1st 2024, and for the last year), IBM has not released a python >3.10 compatible version. So QGIS<=3.36.0 is required for using CPLEX (CBC is included and works fine except for large rasters)_  
+_Decision Optimization algorithm users __beware__: At the moment (May 1st 2024, and for the last year), IBM has not released a python >3.10 compatible version. So QGIS<=3.36.1 is required for using CPLEX (CBC is included and works fine except for large rasters)_  
 2. Install python dependencies for [Linux🗽](#python), [MacOS](#python-1), [Windows](#python-2) ... or [last resort](forcing-python-requirements.html)
 3. Add fire2a's plugin repo/store [URL][toolbox-server] to custom plugin sources *(open here!)*   
 * [tutorial][custom] 
@@ -296,7 +296,7 @@ Also on the gif, a success install of qtconsole being installed on `Program File
 
 ### setup CPLEX solver 
 
-__At the moment (May 1st 2024, and for the last year), IBM has not released a python >3.10 compatible version. So QGIS<=3.36.0 is required.__  
+__At the moment (May 1st 2024, and for the last year), IBM has not released a python >3.10 compatible version. So QGIS<=3.36.1 is required.__  
 
 0. Make your QGIS python environment writable by users (see previous section)
 1. Download and install the CPLEX solver from IBM's website (tested with CPLEX_Studio2211)
