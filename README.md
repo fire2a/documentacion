@@ -1,38 +1,77 @@
-# Fire2a documentation repo
+# Fire2a user documentation webpage
 
-This repo uses the [just-the-docs-template](https://github.com/just-the-docs/just-the-docs-template) Jekyl Pages action.  
-The source for its content is in the docs directory.  
-Check the live [page](https://fire2a.github.io/docs/).  
+This "GitHub Pages" hosted page is published [here](https://fire2a.github.io/docs/)
 
-## About Us
+Using [just-the-docs-template](https://github.com/just-the-docs/just-the-docs-template) Jekyll Pages action
 
-We are a research group that seeks solutions to complex problems arising from the terrestrial ecosystem and its natural and anthropogenic disturbances,such as wildfires.
+The content is located in `site` directory, and it is mainly just markdown files
 
-Currently hosted at [ISCI](https://isci.cl) offices.
+## Contributing
+Please feel free to contribute by opening a pull request, to preview your changes locally, you can use the following methods:
 
-Contact us at <a href="mailto:fire2a@fire2a.com">fire2a@fire2a.com</a>.
+### Container
+This setup will build the Jekyll site inside the container and serve it with live reload enabled.
 
-[content licence](./LICENCE)
-[just-the-docs-licence](./just-the-docs-LICENCE)
+You can access the site at `http://localhost:4000` after running the container.
+```bash
+sudo apt install podman
 
-## local hosting on debian
-### install
+# build the container named fire2a_docs
+podman build -t fire2a_docs .
 
-    sudo apt-get install ruby-full ruby-bundler jekyll build-essential
-    cd repo/root/
-    bundle config set --local path 'vendor/bundle'
-    bundle install
+# build_n_serve.sh is the default command
+podman run -it --rm -v ./site:/app -p 35729:35729 -p 4000:4000 fire2a_docs
 
-### serve
+# or just serve (after build)
+podman run -it --rm -v ./site:/app -p 35729:35729 -p 4000:4000 fire2a_docs /serve.sh
+```
 
-    bundle exec jekyll serve --livereload
+### Local hosting on debian
+#### install
+```bash
+sudo apt-get install ruby-full ruby-bundler jekyll build-essential
+```
+#### build
+```
+cd <repo/root>/site
+bundle config set --local path 'vendor/bundle'
+bundle install
+```
+#### live serve
+Editing and saving will automatically update the page.  
+```bash
+bundle exec jekyll serve --livereload
+...
+LiveReload address: http://127.0.0.1:35729
+    Server address: http://127.0.0.1:4000  <--- OPEN IN BROWSER
+  Server running... press ctrl-c to stop.
+```
 
-    # ctrl+click here to open
-    ...
-    Server address: http://127.0.0.1:4000
-    ...
+## Mantainance
+Dependabot will automatically create a pull requests to update github actions.  
+Only the `just-the-docs` gem needs attention.
+### testing the just-the-docs dependencies update
+Although it usually works fine, sometimes there are compatibility issues with ruby or node versions.  
+Test locally and also on the Actions CI before merging.  
+```bash
+git switch dependabot/bundler/just-the-docs-0.8.2
+# check compatibility
+ruby -v
+node -v
+# clean
+git clean -dfX -n
+git clean -dfX
+cd site
+rm Gemfile.lock
+rm -r .bundle vendor/bundle
+bundle clean --force
+# rebuild
+```
+Usually `Gemfile.lock` changes are only the ones proposed by dependabot, tested automatically on the CI github actions.  
+If the CI fails, adjust locally matching/changing the same configuration (ubuntu-latest, ruby version, node version) until it works.
+#### tl;dr: don't commit Gemfile.lock changes manually
 
-### references
-https://github.com/just-the-docs/just-the-docs
-https://jekyllrb.com/docs/installation/other-linux/
+## references
+https://github.com/just-the-docs/just-the-docs  
+https://jekyllrb.com/docs/installation/other-linux/  
 
